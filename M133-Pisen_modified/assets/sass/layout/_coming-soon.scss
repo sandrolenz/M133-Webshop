@@ -1,0 +1,115 @@
+/************************************
+   	Coming soon
+*************************************/
+.main-coming-soon {
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	.coming-soon {
+		h1 {
+			@include font-bold(48px, $title, 1);
+			margin-bottom: 15px;
+		}
+		.notification {
+			@include font-regular(14px, $disable, 18px);
+			letter-spacing: 8.4px;
+			text-transform: uppercase;
+			margin-bottom: 60px;
+		}
+		#countdown {
+			display: flex;
+			background-color: #1d2c44;
+			border-radius: 11px;
+			padding: 25px 40px;
+			justify-content: space-between;
+			margin-bottom: 80px;
+			.countdown-number {
+				text-align: center;
+				display: flex;
+				align-items: baseline;
+				b {
+					display: inline-block;
+					@include font-bold(51px, $red, 1);
+				}
+				p {
+					@include font-bold(14px, $white, 1);
+					display: inline-block;
+					&:before {
+						content: "/";
+					}
+				}
+			}
+		}
+		.follow {
+			h3 {
+				@include font-bold(18px, $title, 1);
+				margin-bottom: 26px;
+			}
+			.social-contact {
+				a {
+					@include button($red,$white,14px,999px,0px,$red,5px,$white,$red,$red);
+					height: 30px;
+					width: 30px;
+					text-align: center;
+					margin-right: 30px;
+					box-shadow: 2px 3.5px 18px 0 rgba(32, 45, 73, 0.1);
+				}
+			}
+		}
+	}
+}
+
+@include mobile {
+	.main-coming-soon {
+		display: block;
+		margin-top: 70px;
+		.coming-soon {
+			#countdown {
+				padding: 15px 25px;
+				.countdown-number {
+					b {
+						font-size: 30px;
+					}
+				}
+			}
+			.follow {
+				margin-bottom: 30px;
+			}
+		}
+	}
+}
+
+@include tablet {
+	.main-coming-soon {
+		display: block;
+		margin: 70px 0; 
+		.coming-soon {
+			#countdown {
+				.countdown-number {
+					b {
+						font-size: 45px;
+					}
+				}
+			}
+			.follow {
+				margin-bottom: 30px;
+			}
+		}
+	}
+}
+
+@include small-desktop {
+	.main-coming-soon {
+		.coming-soon {
+			#countdown {
+				.countdown-number {
+					b {
+						font-size: 35px;
+					}
+				}
+			}
+		}
+	}
+}

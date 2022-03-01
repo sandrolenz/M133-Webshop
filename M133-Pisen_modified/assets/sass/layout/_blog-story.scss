@@ -1,0 +1,111 @@
+/************************************
+   	Blog story
+*************************************/
+.blog-story {
+	.main-news_block {
+		margin-bottom: 40px;
+		.post-classic-tib.big-post {
+			margin-bottom: 30px;
+			height: 470px;
+			.post-detail {
+				max-width: 450px;
+				top: 50%;
+				left: 100px;
+				transform: translateY(-50%);
+				.post-title {
+					@include font-bold(40px,$white,55px);
+					margin-bottom: 5px;
+				}
+				.post-describe {
+					margin-bottom: 40px;
+					color: $white;
+				}
+				button {
+					margin-bottom: 0;
+				}
+			}
+			.post-overlay {
+				background: rgba(0, 0, 0, 0.3);
+			}
+		}
+		.post-classic-tib.mini-post {
+			height: 280px;
+			margin-bottom: 30px;
+		}
+	}
+	.feature-product_block {
+		.bundle-title {
+			margin-bottom: 50px;
+		}
+		.feature-products {
+			margin-bottom: 20px;
+		}
+	}
+}
+@include mobile {
+	.blog-story {
+		.main-news_block {
+			.post-classic-tib.big-post {
+				.post-detail {
+					max-width: 100%;
+					left: 30px;
+					top: auto;
+					transform: translateY(0);
+					.post-title {
+						@include font-bold(30px,$white,35px);
+						margin-bottom: 15px;
+					}
+					.post-describe {
+						margin-bottom: 25px;
+					}
+				}			
+			}
+			.post-classic-tib.mini-post {
+				max-height: 100%;
+			}
+		}
+	}
+}
+@include tablet {
+	.blog-story {
+		.main-news_block {
+			.post-classic-tib.big-post {
+				.post-detail {
+					max-width: 100%;
+					left: 30px;
+					bottom: auto;
+					.post-title {
+						@include font-bold(24px,$white,28px);
+						margin-bottom: 15px;
+					}
+					.post-describe {
+						margin-bottom: 25px;
+					}
+				}			
+			}
+			.post-classic-tib.mini-post {
+				max-height: 100%;
+			}
+		}
+	}
+}
+@include small-desktop {
+	.blog-story {
+		.main-news_block {
+			.post-classic-tib.big-post {
+				.post-detail {
+					max-width: 100%;
+					left: 30px;
+					bottom: auto;
+					.post-title {
+						@include font-bold(30px,$white,35px);
+						margin-bottom: 15px;
+					}
+					.post-describe {
+						margin-bottom: 25px;
+					}
+				}			
+			}
+		}
+	}
+}

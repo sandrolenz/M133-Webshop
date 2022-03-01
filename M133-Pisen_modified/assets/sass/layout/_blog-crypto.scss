@@ -1,0 +1,106 @@
+/************************************
+  	Blog cryto
+*************************************/
+.blog-crypto {
+	.slide-prev {
+		left: 15px;
+	}
+	.slide-next {
+		right: 15px;
+	}
+	.blog-news_bundle {
+		margin-bottom: 70px;
+		.bundle-title {
+			margin-bottom: 30px;
+		}
+	}
+	.new-news-bundle {
+		.post-classic-tib {
+			&.mini-post {
+				height: 250px;
+			}
+			&.big-post {
+				height: 500px;
+			}
+			&.regular-post {
+				height: 280px;
+				margin: 0 15px;
+			}
+		}
+		.new-news-slide {
+			margin: 0 -15px;
+			margin-top: 30px;
+			
+		}
+	}
+	.video-bundle {
+		.video-bundle_wrapper {
+			margin: 0 -15px;
+			.post-video-text-in_block {
+				margin: 0 15px;
+			}
+		}
+	}	
+	.crypto-sidebar_block {
+		margin-bottom: 50px;
+	}
+	.crypto-block_left {
+		.lastest-posts-bundle {
+			.post-mini_block {
+				img {
+					max-width: 50%;
+					max-height: unset;
+				}
+				.post-detail {
+					.post-title {
+						font-size: 24px;
+						line-height: 28px;
+					}
+					.post-describe {
+						font-size: 16px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@include mobile {
+	.blog-crypto {
+		.crypto-block_left {
+			.lastest-posts-bundle {
+				.post-mini_block {
+					align-items: flex-start;
+				}
+			}
+		}
+	}
+}
+
+@include tablet {
+	.blog-crypto {
+		.video-bundle {
+			.video-bundle_wrapper {
+				.post-video-text-in_block {
+					.post-text-in {
+						.post-detail {
+							display: none;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@include small-desktop {
+	.blog-crypto {
+		.crypto-block_left {
+			.lastest-posts-bundle {
+				.post-mini_block {
+					align-items: flex-start;
+				}
+			}
+		}
+	}
+}

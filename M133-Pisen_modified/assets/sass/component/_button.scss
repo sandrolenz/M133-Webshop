@@ -1,0 +1,17 @@
+/************************************
+   Button
+*************************************/
+.normal-btn {
+	@include button($red,$white,14px,0px,2px,$red,10px 30px,$white,$red,$red);
+}
+.icon-btn {
+	@include button($smooth,$title,14px,999px,2px,$smooth,7px,$red,$white,$red);
+	font-family: inherit;
+	height: 40px;
+	width: 40px;
+	text-align: center;
+	margin-right: 10px;
+	&:last-child {
+		margin-right: 0;
+	}
+}

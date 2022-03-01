@@ -1,0 +1,116 @@
+/************************************
+   Posts
+*************************************/
+.posts {
+	cursor: default;
+	.post-describe {
+		@include font-regular(17px, $regular, 26px);
+	}
+	.post-title {
+		@include link-bold(36px,$title, 44px ,$red);
+		&.regular {
+			@include link-bold(26px,$title, 30px ,$red);
+		}
+		&.small {
+			@include link-bold(20px,$title, 24px ,$red);
+		}
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	.upload-day {
+		@include font-regular(14px, $disable, 1);
+		text-transform: uppercase;
+		margin-right: 30px;
+	}
+	.author-name {
+		@extend .upload-day;
+		&.mini {
+			font-size: 12px;
+		}
+	}
+	.post-tag {
+		&.mini {
+			a {
+				font-size: 12px;
+			}
+		}
+		a {
+			@include link-regular(14px, $red, 1, $red);
+			text-transform: uppercase;
+			&:before {
+				content: "#";
+			}
+		}
+	}
+	.post-img {
+		width: 100%;
+		overflow: hidden;
+		img {
+			object-fit: cover;
+			height: 100%;
+			width: 100%;
+		}
+	}
+	.author-avatar {
+		height: 35px;
+		width: 35px;
+		border-radius: 999px;
+		overflow: hidden;
+		margin-right: 20px;
+		img {
+			@include img-center;
+			width: 100%;
+		}
+	}
+	.post-video {
+		.plyr {
+			min-width: auto;
+			.plyr__controls {
+				opacity: 0;
+				background: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.42));
+				.plyr__control {
+					&:hover {
+						background-color: $red;
+					}
+					&.plyr__tab-focus {
+						background: $red;
+						&:hover {
+							background-color: $red;
+						}
+					}
+				}
+			}
+			.plyr__poster {
+				background-size: cover;
+			}
+			.plyr__control--overlaid {
+				@include button($white,$black,16px,999px,0,$red,20px,$red,$white,$red);
+			}
+		}
+		.plyr--full-ui input[type=range] {
+			color: $red;
+		}
+	}
+	.slick-arrow {
+		@include button(rgba(255, 255, 255, 0.65),$black,16px,0,0,$red,0,$red,$white,$red);
+		opacity: 1;
+		position: absolute;
+		top: 50%;
+		-webkit-transform: translateY(-50%);
+		   -moz-transform: translateY(-50%);
+		    -ms-transform: translateY(-50%);
+		     -o-transform: translateY(-50%);
+		        transform: translateY(-50%);
+		width: 30px;
+		height: 80px;
+		z-index: 5;
+	}
+	.slide-prev {
+		left: 0;
+	}
+	.slide-next {
+		right: 0;
+	}
+}
+

@@ -1,0 +1,57 @@
+/************************************
+    Custom bootsrap
+*************************************/
+
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+
+$headings-margin-bottom: 0;
+$label-margin-bottom: 0;
+
+ol,ul,li {
+  padding-left: 0;
+}
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+  xxxl: 1770px
+);
+$container-max-widths: (
+  sm: 100%,
+  md: 100%,
+  lg: 100%,
+  xl: 1170px,
+);
+$paragraph-margin-bottom: 0;
+
+button:focus {
+  outline: 0;
+}
+
+.full-fluid {
+    @include make-container(0px);
+}
+.ogami-container-fluid {
+    @include make-container(30px);
+    max-width: 1800px;
+    // @include media-breakpoint-up(xl) {
+    //   max-width: 1170px;
+    // }
+    // @include media-breakpoint-up(xxl) {
+    //   max-width: 1350px;
+    // }
+    // @include media-breakpoint-up(xxxl) {
+    //   max-width: 1800px;
+    // }
+}
+
+
+
+@import "node_modules/bootstrap/scss/reboot";
+@import "node_modules/bootstrap/scss/bootstrap";

@@ -1,0 +1,109 @@
+/************************************
+   Shop sidebar
+*************************************/
+.shop-sidebar {
+	-webkit-transition: all 0.4s ease;
+	   -moz-transition: all 0.4s ease;
+	    -ms-transition: all 0.4s ease;
+	     -o-transition: all 0.4s ease;
+	        transition: all 0.4s ease;
+	.shop-sidebar--title {
+		@include font-bold(24px,$title,1);
+		margin-bottom: 30px;
+	}
+	.categories {
+		margin-bottom: 40px;
+		ul {
+			li {
+				display: block;
+				list-style: none;
+				input {
+					margin-right: 5px;
+				}
+				label {
+					@include font-regular(16px,$regular,33px);
+					display: inline-block;
+				}
+			}
+		}
+	}
+	.price-filter {
+		margin-bottom: 50px;
+		.slider-bar {
+			background-color: #f7f7f7;
+			height: 3px;
+			border: 0;
+			margin-bottom: 20px;
+		}
+		.range-bar {
+			background-color: $red;
+		}
+		.handle {
+			border-radius: 999px;
+			height: 15px;
+			width: 15px;
+			box-shadow: 0 0 3.8px 0.2px rgba(0, 0, 0, 0.3);
+			&:focus {
+				outline: 0;
+				box-shadow: none;
+			}
+			&.ui-state-active {
+				background-color: $red;
+				border: 0;
+			}
+		}
+		#amount {
+			border: 0;
+			@include font-regular(16px,$title,1);
+		}
+	}
+	.color {
+		ul {
+			li {
+				list-style: none;
+				.color-group {
+					@include link-regular(16px,$regular,33px,$red);
+					.color {
+						height: 13px;
+						width: 13px;
+						border: 1px solid #f7f7f7;
+						display: inline-block;
+						margin-right: 15px;
+						border-radius: 999px;
+					}
+					p {
+						display: inline-block;
+					}
+				}
+			}
+		}
+	}
+	&.mobile {
+		position: fixed;
+		top: 0;
+		left: -100%;
+		background-color: $white;
+		width: 80vw;
+		height: 100vh;
+		overflow-y: auto;
+		z-index: 21;
+		padding: 30px;
+	}
+}
+
+@include small-desktop {
+	.shop-sidebar {
+		&.mobile {
+			width: 50vw;
+		}
+	}
+}
+
+@include desktop {
+	.shop-sidebar {
+		&.mobile {
+			width: 30vw;
+		}
+	}
+}
+

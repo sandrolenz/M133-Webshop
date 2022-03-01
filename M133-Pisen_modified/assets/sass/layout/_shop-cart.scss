@@ -1,0 +1,173 @@
+/************************************
+   	Shop cart
+*************************************/
+.shop-cart {
+	.cart-table {
+		margin-bottom: 40px;
+		.table {
+			border: 1px solid $border;
+			.product-clear {
+				button {
+					border: 0;
+					background-color: $trans;
+					font-size: 16px;
+				}	
+			}
+			thead {
+				tr {
+					th {
+						border-top: 0;
+						border-bottom: 1px solid $border;
+						@include font-bold(16px,$title,1);
+						text-transform: uppercase;
+						display: table-cell;
+						padding-top: 25px;
+						padding-bottom: 25px;
+						text-align: center;
+					}
+				}
+			}
+			tbody {
+				td {
+					vertical-align: middle;
+					text-align: center;
+				}
+				.product-image {
+					.img-wrapper {
+						img {
+							width: 170px;
+							height: 170px;
+							object-fit: cover;
+						}
+					}
+				}
+				.product-name {
+					@include font-regular(18px,$title,1);
+					display: table-cell;
+				}
+				.product-price {
+					@include font-bold(16px,$title,1);
+					display: table-cell;
+				}
+				.product-total {
+					@extend .product-price;
+				}
+				.product-quantity {
+					.quantity-control {
+						border: 2px solid $disable;
+						display: inline-block;
+						padding: 5px 10px;
+						.control-btn {
+							@include link-regular(18px,$title,1,$title);
+							display: inline-block;
+						}
+						input {
+							border: 0;
+							width: 70px;
+							padding: 0 20px;
+							text-align: center;
+							@include font-bold(18px,$regular,1);
+							display: inline-block;
+							&:focus {
+								outline: 0;
+								box-shadow: none;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.cart-action {
+		.cart-function_block {
+			.button-group {
+				margin-bottom: 30px;
+				display: flex;
+				justify-content: space-between;
+				a {
+					@include button($white,$title,14px,0px,2px,$border,10px 20px,$border,$title,$border);
+					margin-right: 15px;
+					text-align: center;
+				}
+			}
+			.discount  {
+				h2 {
+					@include font-bold(16px,$title,1);
+					margin-bottom: 20px;
+				}
+				form {
+					display: inline-block;
+					border: 2px solid $border;
+					display: flex;
+					justify-content: space-between;
+					padding: 0 20px;
+					button {
+						border: 0;
+						background-color: $trans;
+						@include font-bold(16px,$title,1);
+						text-transform: uppercase;
+					}
+					input {
+						@include input(0,$border,10px 20px 10px 0,auto);
+						background-color: $trans;
+						width: 100%;
+						border: 0;
+					}
+				}
+			}
+		}
+		.cart-total {
+			.table {
+				background-color: $border;
+				margin-bottom: 0;
+				tbody {
+					.sub-total-row {
+						border-bottom: 1px solid $white;
+					}
+					td {
+						border-top: 0;
+						@include font-bold(16px,$title,1);
+						display: table-cell;
+						padding: 20px;
+					}
+					.sub-total--title {
+						@include font-regular(16px,$title,1);
+					}
+					.sub-total {
+						font-size: 14px;
+					}
+					.total--title {
+						text-transform: uppercase;
+					}
+					.total {
+						color: $red;
+					}
+				}
+			}
+			a {
+				@include button($black,$white,14px,0px,2px,$black,10px 0,$red,$white,$red);
+				width: 100%;
+				text-align: center;
+			}
+		}
+	}
+}
+@include mobile {
+	.shop-cart {
+		.cart-action {
+			.cart-function_block {
+				margin-bottom: 30px;
+			}
+		}
+	}
+}
+
+@include tablet {
+	.shop-cart {
+		.cart-action {
+			.cart-function_block {
+				margin-bottom: 30px;
+			}
+		}
+	}
+}

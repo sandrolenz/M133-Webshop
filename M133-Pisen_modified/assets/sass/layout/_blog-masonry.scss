@@ -1,0 +1,60 @@
+/************************************
+   	Blog masonry
+*************************************/
+.blog-masonry {
+	.blog-masonry_wrapper {
+		margin: 0 -15px;
+		.post-block {
+			display: inline-block;
+			margin-bottom: 50px;
+			width: 33.33333%;
+			padding: 0 15px;
+			.post-img {
+				height: auto;
+				img {
+					width: 100%;
+				}
+			}
+			.post-detail {
+				.post-credit {
+					margin-bottom: 10px;
+					.upload-day {
+						display: inline-block;
+					}
+					.post-tag {
+						display: inline-block;
+					}
+				}
+			}
+		}
+		.post-classic {
+			.post-img {
+				margin-bottom: 10px;
+			}
+		}
+		.post-with-video {
+			.post-video {
+				margin-bottom: 10px;
+			}
+		}
+	}
+}
+@include mobile {
+	.blog-masonry {
+		.blog-masonry_wrapper {
+			.post-block { 
+				width: 100%;
+			}
+		}
+	}
+}
+
+@include tablet {
+	.blog-masonry {
+		.blog-masonry_wrapper {
+			.post-block { 
+				width: 50%;
+			}
+		}
+	}
+}

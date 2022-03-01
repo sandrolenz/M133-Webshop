@@ -1,0 +1,64 @@
+/************************************
+   	Contact
+*************************************/
+.contact {
+	margin-bottom: 70px;
+	.map-contact {
+		margin-bottom: 70px;
+		iframe {
+		    filter: grayscale(100%);
+		    box-shadow: 0px 4px 18px 0 rgba(32, 45, 73, 0.1);
+		}
+	}
+	.contact-method {
+		margin-bottom: 70px;
+		text-align: center;
+		.icon-contact {
+			background-color: $white;
+		 	box-shadow: 0px 4px 18px 0 rgba(32, 45, 73, 0.1);
+		 	border-radius: 999px;
+		 	display: inline-block;
+		 	padding: 40px;
+		 	margin-bottom: 40px;
+			i {
+				font-size: 40px;
+				color: $red;
+			}
+		}
+		.contact-detail {
+			h2 {
+				@include font-bold(16px, $title, 1);
+				margin-bottom: 10px;
+			}
+			p {
+				@include font-regular(18px, $regular, 26px);
+			}
+		}
+	}
+	.leave-message {
+		h1 {
+			@include font-bold(36px, $title, 1);
+			margin-bottom: 25px;
+		}
+		p {
+			@include font-regular(16px, $regular, 1);
+			margin-bottom: 50px;
+		}
+		form {
+			.form-row {
+				margin-bottom: 50px;
+			}
+		}
+	}
+}
+@include small-desktop {
+	.contact {
+		.contact-method {
+			.contact-detail {
+				p {
+					font-size: 14px;
+				}
+			}
+		}
+	}
+}

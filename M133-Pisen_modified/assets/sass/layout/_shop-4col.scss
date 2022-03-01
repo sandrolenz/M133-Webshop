@@ -1,0 +1,36 @@
+/************************************
+   	Shop 4 column
+*************************************/
+.shop-4col {
+	.sidebar-wrapper {
+		display: none;
+	}
+}
+@include mobile {
+	.shop-4col {
+		.sidebar-wrapper {
+			display: block;
+		}
+	}
+}
+@include tablet {
+	.shop-4col {
+		.sidebar-wrapper {
+			display: block;
+		}
+	}
+}
+@include small-desktop {
+	.shop-4col {
+		.sidebar-wrapper {
+			display: block;
+		}
+	}
+}
+@include desktop {
+	.shop-4col {
+		.sidebar-wrapper {
+			display: block;
+		}
+	}
+}

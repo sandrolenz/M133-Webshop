@@ -1,0 +1,91 @@
+/************************************
+   Blog 2 column
+*************************************/
+.blog-2col {
+	.post-block {
+		margin-bottom: 70px;
+		.post-img {
+			height: auto;
+			max-height: 350px;
+			img {
+				width: 100%;
+			}
+		}
+		.post-video {
+			.plyr {
+				max-height: 300px;
+				border-radius: 5px;
+				.plyr__poster {
+					background-size: cover;
+				}
+			}
+		}
+	}
+	.post-detail {
+		.post-title {
+			margin-bottom: 20px;
+		}
+		.post-credit {
+			margin-bottom: 30px;
+			display: flex;
+			align-items: center;
+			white-space: nowrap;
+			overflow-x: auto;
+			.author {
+				display: flex;
+				align-items: center;
+				
+			}
+		}
+	}
+	.post-classic {
+		.post-img {
+			margin-bottom: 40px;
+			max-height: 350px;
+		}
+	}
+	.post-with-video {
+		.post-video {
+			margin-bottom: 40px;
+		}
+	}
+}
+@include mobile {
+	.blog-2col {
+		.post-block {
+			.post-img {
+				max-height: unset;
+			}
+		}
+	}
+}
+
+@include tablet {
+	.blog-2col {
+		.post-block {
+			.post-img {
+				max-height: unset;
+			}
+		}
+	}
+}
+
+@include small-desktop {
+	.blog-2col {
+		.post-block {
+			.post-img {
+				max-height: unset;
+			}
+		}
+	}
+}
+
+@include desktop {
+	.blog-2col {
+		.post-block {
+			.post-img {
+				max-height: unset;
+			}
+		}
+	}
+}

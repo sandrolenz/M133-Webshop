@@ -1,0 +1,26 @@
+/************************************
+   	Shop 5 column
+*************************************/
+.shop-5col {
+	@extend .shop-4col;
+}
+@include mobile {
+	.w-100 {
+		display: none;
+	}
+}
+@include tablet {
+	.w-100 {
+		display: none;
+	}
+}
+@include small-desktop {
+	.w-100 {
+		display: none;
+	}
+}
+@include desktop {
+	.w-100 {
+		display: none;
+	}
+}

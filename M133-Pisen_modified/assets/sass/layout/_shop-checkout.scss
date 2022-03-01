@@ -1,0 +1,57 @@
+/************************************
+	Shop checkout
+*************************************/
+.shop-checkout {
+	form {
+		.checkout-title {
+			@include font-bold(24px,$title,1);
+			margin-bottom: 40px;
+		}
+		.form-group {
+			margin-bottom: 20px;
+			label {
+				@include font-regular(16px,$title,1);
+				display: inline-block;
+				text-transform: Capitalize;
+				margin-bottom: 10px;
+			}
+			input[type="text"], input[type="email"], input[type="password"] {
+				@include input(2px,$trans,0 20px,45px);
+				width: 100%;
+				background-color: $trans;
+			}
+			textarea {
+				width: 100%;
+				@include textarea(0,$trans,20px);
+				background-color: $trans;
+			}
+		}
+		.shop-checkout {
+			padding: 30px 40px;
+			background-color: #f8f8f8;
+			.table {
+				margin-bottom: 30px;
+				td,th {
+					border-top: 0;
+					border-bottom: 1px solid $border;
+					display: table-cell!important;
+					padding: 20px;
+				}
+				th {
+					@include font-bold(16px,$title,1);
+					text-transform: uppercase;
+				}
+				td {
+					@include font-regular(16px,$title,1);
+					text-transform: capitalize;
+				}
+			}
+			.submit-form {
+				text-align: center;
+				#place-order {
+					@include button($black,$white,14px,0px,2px,$black,10px 30px,$red,$white,$red);
+				}
+			}
+		}
+	}
+}

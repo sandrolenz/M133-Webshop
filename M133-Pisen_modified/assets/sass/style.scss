@@ -1,0 +1,104 @@
+/*
+	*****************************************************************
+	*	Theme Name: Pisen									
+	*	Author: DeerCreative 										
+	*	Author URL: https://themeforest.net/user/deercreative 		
+	*	Version: 1.0.0												
+	*****************************************************************
+*/
+/************************************
+	-------------------------[Table of contents]----------------------
+	This files contains the styling for the actual templates, this is the file you need to edit to change the look of the template.
+
+	This file contents are outlined below.
+	------------------------------------------------------------------
+
+	[Let press Ctrl + f and type of paste the key, then press Enter to search the content ]
+  	content / #[keyword to find]
+  	1. LAYOUT STYLE
+  		1.1. About us
+  		1.2. Blog 2 column
+  		1.3. Blog agency
+  		1.4. Blog creative
+  		1.5. Blog cryto
+  		1.6. Blog detail
+  		1.7. Blog index
+  		1.8. Blog masonry
+  		1.9. Blog metro
+  		1.10. Blog news
+  		1.11. Blog story
+  		1.12. Coming soon
+  		1.13. Contact
+  		1.14. 404 error
+  		1.16. Shop 4 column
+  		1.17. Shop 5 column
+  		1.18. Shop cart
+  		1.20. Shop checkout
+  	2. COMPONENT
+  	 	2.1. Centering container
+      2.2. Button
+      2.3. Footer
+        2.3.1. Footer v2
+      2.4. Header
+        2.4.1. Header mobile
+      2.5. Hover
+      2.6. Input form
+      2.7. Instagram posts
+      2.8. Post audio
+      2.9. Post classic
+        2.9.1. Post classic text in
+      2.10. Post mini
+      2.11. Post quote
+      2.12. Post slide
+      2.13. Post video
+        2.13.1. Post text in video
+  		2.14. Posts
+  		2.15. Product
+      2.16. Scroll up
+      2.17. Search fullscreen
+      2.18. Shop sidebar
+      2.19. Shop
+      2.20. Typography
+*************************************/
+@import 'base/breakpoint';
+@import 'base/color';
+@import 'base/typography';
+@import 'base/mixin';
+@import 'component/header';
+@import 'component/posts';
+@import 'component/typography';
+@import 'component/box-center';
+@import 'component/button';
+@import 'component/instagram-post';
+@import 'component/footer';
+@import 'component/input-form';
+@import 'component/search-full';
+@import 'component/post-classic';
+@import 'component/post-slide';
+@import 'component/post-video';
+@import 'component/post-audio';
+@import 'component/post-quote';
+@import 'component/post-mini';
+@import 'component/scroll-up';
+@import 'component/hover';
+@import 'component/product';
+@import 'component/shop-sidebar';
+@import 'component/shop';
+@import 'layout/blog-2-column';
+@import 'layout/blog-masonry';
+@import 'layout/blog-news';
+@import 'layout/blog-index';
+@import 'layout/blog-agency';
+@import 'layout/blog-story';
+@import 'layout/blog-metro';
+@import 'layout/blog-creative';
+@import 'layout/blog-crypto';
+@import 'layout/blog-detail';
+@import 'layout/shop-4col';
+@import 'layout/shop-5col';
+@import 'layout/shop-cart';
+@import 'layout/shop-checkout';
+@import 'layout/about-us';
+@import 'layout/contact';
+@import 'layout/error-404';
+@import 'layout/coming-soon';

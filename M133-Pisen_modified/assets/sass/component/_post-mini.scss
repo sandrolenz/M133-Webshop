@@ -1,0 +1,66 @@
+/************************************
+   Post mini
+*************************************/
+.posts {
+	.post-mini_block {
+		display: flex;
+		align-items: center;
+		margin-bottom: 30px;
+		img {
+			max-width: 150px;
+			max-height: 150px;
+			height: 100%;
+			margin-right: 30px;
+			object-fit: cover;
+		}
+		.post-title {
+			@include link-bold(20px,$title, 24px ,$red);
+			margin-bottom: 20px;
+		}
+		.post-describe {
+			margin-bottom: 15px;
+		}
+		.post-detail {
+			flex-grow: 1;
+			.post-credit {
+				overflow-x: unset;
+				margin-bottom: 0;
+				.post-tag {
+					margin-bottom: 15px;
+					a {
+						font-size: 12px;
+					}
+				}
+				.author {
+					.author-name {
+						font-size: 12px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@include mobile {
+	.posts {
+		.post-mini_block {
+			img {
+				max-width: 35%;
+				max-height: 100%;
+				margin-right: 20px;
+			}
+		}
+	}
+}
+
+@include tablet {
+	.posts {
+		.post-mini_block {
+			img {
+				max-width: 40%;
+				max-height: 100%;
+				margin-right: 20px;
+			}
+		}
+	}
+}

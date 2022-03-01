@@ -1,0 +1,284 @@
+// Mixin
+
+@mixin typo($font-face,$font-sz,$color,$line-height) {
+	font-family: $font-face;
+	font-size: $font-sz;
+	color: $color;
+	line-height: $line-height;
+	display: block;
+}
+
+@mixin link($font-face,$font-sz,$color,$line-height,$hvr-color) {
+	font-family: $font-face;
+	font-size: $font-sz;
+	color: $color;
+	line-height: $line-height;
+	display: inline-block;
+	-webkit-transition: 0.3s ease;
+	   -moz-transition: 0.3s ease;
+	    -ms-transition: 0.3s ease;
+	     -o-transition: 0.3s ease;
+	        transition: 0.3s ease;
+	&:hover {
+		color: $hvr-color;
+		text-decoration: none;
+	}
+}
+
+@mixin link-icon($font-sz,$color,$line-height,$hvr-color) {
+	font-size: $font-sz;
+	color: $color;
+	line-height: $line-height;
+	display: inline-block;
+	transition: 0.3s ease;
+	&:hover {
+		color: $hvr-color;
+		text-decoration: none;
+	}
+}
+
+@mixin button($bg-color,$typo-color,$size,$btn-rd,$border-thick,$border-color,$pd,$hvr-bg-color,$hvr-typo-color,$hvr-border-color) {
+	background-color: $bg-color;
+	color: $typo-color;
+	font-size: $size;
+	border-radius: $btn-rd;
+	-webkit-border-radius: $btn-rd;
+    -moz-border-radius: $btn-rd;
+    -ms-border-radius: $btn-rd;
+    -o-border-radius: $btn-rd;
+	padding: $pd;
+	text-transform: uppercase;
+	font-family: 'Cerebri-bold';
+	border: $border-thick solid $border-color;
+	-webkit-transition: 0.3s ease;
+	   -moz-transition: 0.3s ease;
+	    -ms-transition: 0.3s ease;
+	     -o-transition: 0.3s ease;
+	        transition: 0.3s ease;
+	display: inline-block;
+	&:hover {
+		background-color: $hvr-bg-color;
+		color: $hvr-typo-color;
+		border: $border-thick solid $hvr-border-color;
+		text-decoration: none;
+	}
+	&:focus {
+		outline: 0;
+		box-shadow: 0;
+	}
+} 
+
+@mixin input($input-rd,$border-color,$padding,$height) {
+	background-color: $smooth;
+	border-radius: $input-rd;
+    -webkit-border-radius: $input-rd;
+    -moz-border-radius: $input-rd;
+    -ms-border-radius: $input-rd;
+    -o-border-radius: $input-rd;
+	border: 1px solid $smooth;
+	padding: $padding;
+	height: $height;
+	width: 100%;
+	transition:border 0.3s ease;
+	@include font-regular(16px, $regular, 1);
+	&:focus {
+		outline: 0;
+		box-shadow: none;
+		border-color: $disable;
+	}
+	&::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+		@include font-regular(16px,$disable, 1);
+		line-height: -moz-block-height;
+	}
+	&:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+		color:    #909;
+		@include font-regular(16px,$disable, 1);
+		line-height: -moz-block-height;
+	}
+	&::-moz-placeholder { /* Mozilla Firefox 19+ */
+		color:    #909;
+		@include font-regular(16px,$disable, 1);
+		line-height: -moz-block-height;
+	}
+	&:-ms-input-placeholder { /* Internet Explorer 10-11 */
+		@include font-regular(16px,$disable, 1);
+		line-height: -moz-block-height;
+	}
+	&::-ms-input-placeholder { /* Microsoft Edge */
+		@include font-regular(16px,$disable, 1);
+		line-height: -moz-block-height;
+	}
+
+	&::placeholder { /* Most modern browsers support this now. */
+		@include font-regular(16px,$disable, 1);
+		line-height: -moz-block-height;
+	}
+}
+
+@mixin textarea($input-rd,$border-color,$padding) {
+	background-color: $smooth;
+	border-radius: $input-rd;
+    -webkit-border-radius: $input-rd;
+    -moz-border-radius: $input-rd;
+    -ms-border-radius: $input-rd;
+    -o-border-radius: $input-rd;
+	border: 1px solid $smooth;
+	padding: $padding;
+	width: 100%;
+	transition:border 0.3s ease;
+	@include font-regular(16px, $regular, 1);
+	&:focus {
+		outline: 0;
+		box-shadow: none;
+		border-color: $disable;
+	}
+	&::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+		@include font-regular(16px,$disable, 1);
+		line-height: -moz-block-height;
+	}
+	&:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+		color:    #909;
+		@include font-regular(16px,$disable, 1);
+		line-height: -moz-block-height;
+	}
+	&::-moz-placeholder { /* Mozilla Firefox 19+ */
+		color:    #909;
+		@include font-regular(16px,$disable, 1);
+		line-height: -moz-block-height;
+	}
+	&:-ms-input-placeholder { /* Internet Explorer 10-11 */
+		@include font-regular(16px,$disable, 1);
+		line-height: -moz-block-height;
+	}
+	&::-ms-input-placeholder { /* Microsoft Edge */
+		@include font-regular(16px,$disable, 1);
+		line-height: -moz-block-height;
+	}
+
+	&::placeholder { /* Most modern browsers support this now. */
+		@include font-regular(16px,$disable, 1);
+		line-height: -moz-block-height;
+	}
+}
+
+@mixin img-center() {
+	max-width: 100%;
+	max-height: 100%;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin flex-center() {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+// Typography
+
+@mixin font-light($font-sz, $color, $line-height) {
+	@include typo('Cerebri-light',$font-sz,$color,$line-height);
+}
+@mixin font-light-i($font-sz, $color, $line-height) {
+	@include typo('Cerebri-light-italic',$font-sz,$color,$line-height);
+}
+@mixin font-regular($font-sz, $color, $line-height) {
+	@include typo('Cerebri-regular',$font-sz,$color,$line-height);
+}
+@mixin font-regular-i($font-sz, $color, $line-height) {
+	@include typo('Cerebri-italic',$font-sz,$color,$line-height);
+}
+@mixin font-medium($font-sz, $color, $line-height) {
+	@include typo('Cerebri-medium',$font-sz,$color,$line-height);
+}
+@mixin font-medium-i($font-sz, $color, $line-height) {
+	@include typo('Cerebri-medium-italic',$font-sz,$color,$line-height);
+}
+@mixin font-bold($font-sz, $color, $line-height) {
+	@include typo('Cerebri-bold',$font-sz,$color,$line-height);
+}
+@mixin font-bold-i($font-sz, $color, $line-height) {
+	@include typo('Cerebri-bold-italic',$font-sz,$color,$line-height);
+}
+@mixin font-extrabold($font-sz, $color, $line-height) {
+	@include typo('Cerebri-extrabold',$font-sz,$color,$line-height);
+}
+@mixin font-extrabold-i($font-sz, $color, $line-height) {
+	@include typo('Cerebri-extrabold-italic',$font-sz,$color,$line-height);
+}
+
+// Link 
+
+@mixin link-light($font-sz, $color,$line-height,$hvr-color) {
+	@include link('Cerebri-light',$font-sz,$color,$line-height,$hvr-color);
+}
+@mixin link-light-i($font-sz, $color,$line-height,$hvr-color) {
+	@include link('Cerebri-light-italic',$font-sz,$color,$line-height,$hvr-color);
+}
+@mixin link-regular($font-sz, $color,$line-height,$hvr-color) {
+	@include link('Cerebri-regular',$font-sz,$color,$line-height,$hvr-color);
+}
+@mixin link-regular-i($font-sz, $color,$line-height,$hvr-color) {
+	@include link('Cerebri-italic',$font-sz,$color,$line-height,$hvr-color);
+}
+@mixin link-medium($font-sz, $color,$line-height,$hvr-color) {
+	@include link('Cerebri-medium',$font-sz,$color,$line-height,$hvr-color);
+}
+@mixin link-medium-i($font-sz, $color,$line-height,$hvr-color) {
+	@include link('Cerebri-medium-italic',$font-sz,$color,$line-height,$hvr-color);
+}
+@mixin link-bold($font-sz, $color,$line-height,$hvr-color) {
+	@include link('Cerebri-bold',$font-sz,$color,$line-height,$hvr-color);
+}
+@mixin link-bold-i($font-sz, $color,$line-height,$hvr-color) {
+	@include link('Cerebri-bold-italic',$font-sz,$color,$line-height,$hvr-color);
+}
+@mixin link-extrabold($font-sz, $color,$line-height,$hvr-color) {
+	@include link('Cerebri-extrabold',$font-sz,$color,$line-height,$hvr-color);
+}
+@mixin link-extrabold-i($font-sz, $color,$line-height,$hvr-color) {
+	@include link('Cerebri-extrabold-italic',$font-sz,$color,$line-height,$hvr-color);
+}
+
+// Responsive breakpoint
+
+@mixin mobile {
+  @media (max-width: $mobile-width) {
+    @content; 
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$mobile-width}) and (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin small-desktop {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) and (max-width: #{$large-desktop-width - 1px}) {
+    @content;
+  }
+}
+@mixin medium-desktop {
+  @media (min-width: #{$large-desktop-width}) and (max-width: #{$xlarge-desktop-width - 1px}) {
+    @content;
+  }
+}
+@mixin large-desktop {
+  @media (min-width: #{$xlarge-desktop-width}) and (max-width: #{$xxlarge-desktop-width - 1px}) {
+    @content;
+  }
+}
+@mixin extra-large-desktop {
+  @media (min-width: $xxlarge-desktop-width) {
+    @content;
+  }
+}
+

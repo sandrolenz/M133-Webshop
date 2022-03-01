@@ -1,0 +1,52 @@
+/************************************
+   Post quote
+*************************************/
+.posts {
+	.post-with-quote {
+		.post-quote {
+			padding: 50px 70px;
+			q {
+				@include font-regular(24px,$white, 30px);
+				margin-bottom: 20px;
+			}
+			.quote-author {
+				.author-name {
+					@include font-bold(16px,$white, 1);
+					margin-bottom: 5px;
+				}
+				.author-position {
+					@include font-regular(11px,$white, 1);
+				}
+			}
+		}
+	}
+}
+@include mobile {
+	.posts {
+		.post-with-quote {
+			.post-quote {
+				padding: 30px;
+			}
+		}
+	}
+}
+
+@include tablet {
+	.posts {
+		.post-with-quote {
+			.post-quote {
+				padding: 30px;
+			}
+		}
+	}
+}
+
+@include small-desktop {
+	.posts {
+		.post-with-quote {
+			.post-quote {
+				padding: 30px;
+			}
+		}
+	}
+}

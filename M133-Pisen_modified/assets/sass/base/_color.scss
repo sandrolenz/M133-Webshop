@@ -1,0 +1,43 @@
+$red: #f17070;
+$title: #1d2c44;
+$regular: #646d7c;
+$disable: #a4a8b0;
+$white: #fff;
+$black: #000;
+$border: #ebebeb;
+$smooth: #edf0f5;
+$trans: transparent;
+
+// Sub color
+$color1: #fff9d2; // Yellow
+$color2: #f8e2c1; // Yellow near orange
+$color3: #f7dfdf; // Pink
+$color4: #ffe6b5; // Yellow near orange but lighten
+$color5: #caf4ff; // Blue but lighten
+$color6: #d2f9c3; // Green
+$color7: #f38888; // Red but lighten
+
+.bg-1 {
+	background-color: $color1;
+}
+.bg-2 {
+	background-color: $color2;
+}
+.bg-3 {
+	background-color: $color3;
+}
+.bg-4 {
+	background-color: $color4;
+}
+.bg-5 {
+	background-color: $color5;
+}
+.bg-6 {
+	background-color: $color6;
+}
+.bg-7 {
+	background-color: $color7;
+}
+
+
+

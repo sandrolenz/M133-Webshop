@@ -1,0 +1,131 @@
+/************************************
+  	Footer
+*************************************/
+footer {
+	padding-bottom: 30px;
+	.footer-link--title {
+		@include font-bold(20px, $title, 1);
+		margin-bottom: 25px;
+	}
+	.footer-links {
+		ul {
+			li {
+				list-style: none;
+				.footer-link {
+					@include link-regular(16px, $regular, 36px, $red);
+					position: relative;
+					&:hover {
+						&:before {
+							width: 100%;
+						}
+					}
+					&:before {
+						background-color: $red;
+						content: "";
+						display: block;
+						position: absolute;
+						height: 3px;
+						width: 0px;
+						bottom: 0px;
+						-webkit-transition: all 0.4s cubic-bezier(.22,.68,0,1.71);
+						   -moz-transition: all 0.4s cubic-bezier(.22,.68,0,1.71);
+						    -ms-transition: all 0.4s cubic-bezier(.22,.68,0,1.71);
+						     -o-transition: all 0.4s cubic-bezier(.22,.68,0,1.71);
+						        transition: all 0.4s cubic-bezier(.22,.68,0,1.71);
+					}
+				}
+			}
+		}
+	}
+	.footer-contact {
+		.contact-method {
+			margin-bottom: 20px;
+			p {
+				@include font-regular(16px, $regular, 26px);
+				margin-bottom: 10px;
+			}
+		}
+	}
+	form {
+		.email-form {
+			position: relative;
+			margin-bottom: 20px;
+			button {
+				position: absolute;
+				top: 50%;
+				right: 10px;
+				border: 0;
+				background-color: $trans;
+				transform: translateY(-50%);
+				@include link-regular(16px, $regular, 36px, $red);
+			}
+		}
+		.read-policy {
+			margin-bottom: 20px;
+			label {
+				@include font-regular(14px, $regular, 20px);
+				display: inline-block;
+			}
+		}
+	}
+	.copyright {
+		@include font-regular(14px, $disable, 20px);
+	}
+}
+
+
+/************************************
+   Footer v2
+*************************************/
+footer.v2 {
+	background-color: #f3f3f3;
+	padding: 70px 0;
+	.social-contact {
+		margin-bottom: 30px;
+	}
+	.footer-links {
+		ul {
+			li {
+				display: inline-block;
+				margin: 0 25px;
+			}
+		}
+	}
+	.footer-credit {
+
+	}
+}
+
+@include mobile {
+	footer {
+		.footer-contact {
+			margin-bottom: 30px;
+		}
+	}
+	footer.v2 {
+		.footer-links {
+			ul {
+				li {
+					margin: 0 10px;
+				}
+			}
+		}
+	}
+}
+
+@include tablet {
+	footer {
+		.footer-contact {
+			margin-bottom: 30px;
+		}
+	}
+	footer.v2 {
+		.footer-links {
+			ul {
+				li {
+					margin: 0 10px;
+				}
+			}
+		}
+	}
+}

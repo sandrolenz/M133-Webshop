@@ -1,0 +1,85 @@
+/************************************
+   Instagram posts
+*************************************/
+.instagram {
+	margin-bottom: 60px;
+	.instagram-posts {
+		.instagram-img_block {
+			position: relative;
+			overflow: hidden;
+			&:hover {
+				&:after {
+					top: 0;
+					left: 0;
+				}
+				&:before {
+					bottom: 0;
+					right: 0;
+				}
+				.instagram-post_block {
+					opacity: 1;
+				}
+			}
+			&:after {
+				content: "";
+				background-color: rgba(241, 112, 112, 0.7);
+				width: 100%;
+				height: 100%;
+				display: block;
+				position: absolute;
+				top: 100%;
+				left: 100%;
+				-webkit-transition: all .4s ease;
+				   -moz-transition: all .4s ease;
+				    -ms-transition: all .4s ease;
+				     -o-transition: all .4s ease;
+				        transition: all .4s ease;
+			}
+			&:before {
+				content: "";
+				background-color: rgba(241, 112, 112, 0.7);
+				width: 100%;
+				height: 100%;
+				display: block;
+				position: absolute;
+				bottom: 100%;
+				right: 100%;
+				-webkit-transition: all .4s ease;
+				   -moz-transition: all .4s ease;
+				    -ms-transition: all .4s ease;
+				     -o-transition: all .4s ease;
+				        transition: all .4s ease;
+			}
+			img {
+				width: 100%;
+			}
+			.instagram-post_block {
+				text-align: center;
+				position: absolute;
+				z-index: 5;
+				opacity: 0;
+				top: 50%;
+				left: 50%;
+				-webkit-transition: all .4s ease;
+				   -moz-transition: all .4s ease;
+				    -ms-transition: all .4s ease;
+				     -o-transition: all .4s ease;
+				        transition: all .4s ease;
+				-webkit-transform: translate(-50%,-50%);
+				   -moz-transform: translate(-50%,-50%);
+				    -ms-transform: translate(-50%,-50%);
+				     -o-transform: translate(-50%,-50%);
+				        transform: translate(-50%,-50%);
+				i {
+					font-size: 24px;
+					color: $white;
+					display: block;
+					margin-bottom: 15px;
+				}
+				p {
+					@include font-regular(16px, $white, 1);
+				}
+			}
+		}
+	}
+}

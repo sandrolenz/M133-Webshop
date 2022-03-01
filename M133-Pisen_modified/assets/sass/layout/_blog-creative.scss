@@ -1,0 +1,120 @@
+/************************************
+   Blog creative
+*************************************/
+.blog-creative {
+	@extend .blog-agency ;
+	.post-classic-tib.big-post {
+		margin-bottom: 70px;
+		padding: 300px 0;
+		.post-detail {
+			position: unset;
+			max-width: 780px;
+			.post-title {
+				@include font-bold(40px,$white,55px);
+				margin-bottom: 30px;
+			}
+			.post-describe {
+				margin-bottom: 40px;
+				color: $white;
+			}
+			button {
+				margin-bottom: 0;
+			}
+		}
+		.post-overlay {
+			background: rgba(0, 0, 0, 0.3);
+		}
+	}
+	.creative-news_block {
+		margin-bottom: 40px;
+		.angency-sidebar_block {
+			margin-top: 60px;
+			margin-bottom: 0;
+		}
+	}
+	.lastest-news-bundle {
+		margin-bottom: 40px;
+		.post-mini_block {
+			img {
+				max-width: 45%;
+				max-height: unset;
+			}
+			.post-detail {
+				.post-credit {
+					.post-tag {
+						margin-bottom: 5px;
+					}
+				}
+				.post-title {
+					font-size: 24px;
+					line-height: 30px;
+					margin-bottom: 10px;
+				}
+				.post-describe {
+					font-size: 15px;
+					line-height: 18px;
+					margin-bottom: 20px;
+				}
+			}
+		}
+	}
+	.recent-post-sidebar-block {
+		.bundle-title {
+			margin-bottom: 30px;
+		}
+	}
+}
+
+@include mobile {
+	.blog-creative {
+		.post-classic-tib.big-post {
+			padding: 200px 0;
+		}
+		.creative-news_block {
+			.hot-news-bundle {
+				margin-bottom: 30px;
+				.post-classic {
+					margin-bottom: 0;
+				}
+			}
+		}
+		.creative-news_block {
+			.angency-sidebar_block {
+				margin-top: 0;
+				margin-bottom: 0;
+			}
+		}
+		.lastest-news-bundle {
+			.post-mini_block {
+				align-items: flex-start;
+			}
+		}
+	}
+}
+
+@include tablet {
+	.blog-creative {
+		.post-classic-tib.big-post {
+			padding: 200px 0;
+		}
+		.creative-news_block {
+			.hot-news-bundle {
+				margin-bottom: 30px;
+				.post-classic {
+					margin-bottom: 0;
+				}
+			}
+		}
+		.creative-news_block {
+			.angency-sidebar_block {
+				margin-top: 0;
+				margin-bottom: 0;
+			}
+		}
+		.lastest-news-bundle {
+			.post-mini_block {
+				align-items: flex-start;
+			}
+		}
+	}
+}

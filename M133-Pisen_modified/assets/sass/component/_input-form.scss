@@ -1,0 +1,15 @@
+/************************************
+   	Input form
+*************************************/
+.input-form {
+	@include input(2px,$trans,0 20px,45px);
+	&.trans-bg {
+		background-color: $trans;
+	}
+}
+.textarea-form {
+	@include textarea(2px,$border,20px);
+	&.trans-bg {
+		background-color: $trans;
+	}
+}

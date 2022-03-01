@@ -1,0 +1,20 @@
+/************************************
+   	Error 404
+*************************************/
+.error-404 {
+	margin-bottom: 70px;
+	img {
+		margin-bottom: 70px;
+	}
+	h1 {
+		@include font-bold(48px,$title,65px);
+		margin-bottom: 15px;
+	}
+	p {
+		@include font-regular(18px,$title,26px);
+		margin-bottom: 60px;
+	}
+	a {
+		@include button($red,$white,14px,999px,2px,$red,10px 30px,$white,$red,$red);
+	}
+}

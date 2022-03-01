@@ -1,0 +1,20 @@
+/************************************
+   	Typography
+*************************************/
+.title {
+	@include link-bold(36px,$title, 44px ,$red);
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+.title-small {
+	@include link-bold(26px,$title, 35px ,$red);
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+.bundle-title {
+	@include font-bold(30px,$title, 1);
+}

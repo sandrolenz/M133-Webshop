@@ -1,0 +1,53 @@
+/************************************
+   Search fullscreen
+*************************************/
+#search-full {
+	position: fixed;
+	z-index: 30;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: $white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	#exit-search-box {
+		background-color: $trans;
+		border: 0;
+		@include link-icon(30px,$disable,1,$title);
+		position: absolute;
+		top: 20px;
+		right: 30px;
+	}
+	.search-box {
+		position: relative;
+		input {
+			@include input(0px,$disable,0 50px 0 20px,70px);
+			border-width: 0 0 2px 0;
+			background-color: $trans;
+			width: 50vw;
+			@include font-regular(28px, $regular, 1);
+			&::placeholder {
+				font-size: 30px;
+			}
+		}
+		button {
+			position: absolute;
+			background-color: $trans;
+			border: 0;
+			@include link-icon(30px,$disable,1,$title);
+			top: 50%;
+			right: 5px;
+			transform: translateY(-50%);
+		}
+	}
+}
+.fadeIn {
+	animation-name: fadeIn;
+  	animation-duration: 0.4s;
+}
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}

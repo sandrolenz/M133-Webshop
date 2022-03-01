@@ -1,0 +1,28 @@
+/************************************
+   Post slide
+*************************************/
+.posts {
+	.post-slide {
+		margin-bottom: 70px;
+		.post-img-slide {
+			position: relative;
+			padding: 0;
+			display: block;
+			margin-bottom: 30px;
+			
+		}
+		.post-img-multi-slide {
+			@extend .post-img-slide;
+			height: 380px;
+			.post-slide_img {
+				overflow: hidden;
+				height: 380px;
+				margin: 0 10px;
+				@include flex-center;
+				img {
+					min-width: auto;
+				}
+			}
+		}
+	}
+}

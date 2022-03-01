@@ -1,0 +1,82 @@
+/************************************
+   Post audio
+*************************************/
+.posts {
+	.post-with-audio {
+		.post-audio {
+			margin-bottom: 40px;
+			#player {
+				width: 100%;
+			}
+			.plyr__controls {
+				background-color: $color2;
+				padding: 50px 70px;
+				border-radius: 5px;
+				.plyr__control[data-plyr=play] {
+					@include button($white,$black,16px,999px,0,$red,20px,$red,$white,$red);
+				}
+				.plyr__control {
+					&:hover {
+						background-color: $red;
+					}
+					&.plyr__tab-focus {
+						background: $red;
+						&:hover {
+							background-color: $red;
+						}
+					}
+				}
+				.plyr__progress {
+					margin-right: 70px;
+					margin-left: 30px;
+				}
+				.plyr__progress__buffer {
+					color: $white;
+				}
+			}
+			.plyr--full-ui input[type=range] {
+				color: $red;
+			}
+		}
+	}
+}
+
+@include mobile {
+	.posts {
+		.post-with-audio {
+			.post-audio {
+				.plyr__controls {
+					padding: 30px;
+					.plyr__progress {
+						margin-right: 20px;
+						margin-left: 20px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@include tablet {
+	.posts {
+		.post-with-audio {
+			.post-audio {
+				.plyr__controls {
+					padding: 30px;
+				}
+			}
+		}
+	}
+}
+
+@include small-desktop {
+	.posts {
+		.post-with-audio {
+			.post-audio {
+				.plyr__controls {
+					padding: 30px;
+				}
+			}
+		}
+	}
+}
