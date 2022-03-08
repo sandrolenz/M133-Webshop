@@ -1,0 +1,17 @@
+* {
+    font-family: sans-serif;
+}
+
+h1,
+h3 {
+    color: midnightblue;
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+}
+
+div.vertical-spacer {
+    height: 10vh;
+}
