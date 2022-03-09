@@ -38,19 +38,29 @@
 
     <script type="text/javascript">
         function addproduct() {
-            jQuery.ajax({
-                type: "POST",
-                url: './php/addproduct.php',
-                data: {
-                    name: $("#input_name").val(),
-                    geschmack: $("#input_geschmack").val(),
-                    preis: $("#input_preis").val()
-                },
-                success: function(data) {
-                    // added to db
-                    location.reload()
-                }
-            });
+            // validation
+            var write = true;
+            
+            if($("#input_name").val() == "" || $("#input_preis").val() == "") {
+                write = false;
+                alert("Bitte füllen Sie alle Felder aus"):
+                return
+            } else {
+                // add to database
+                jQuery.ajax({
+                    type: "POST",
+                    url: './php/addproduct.php',
+                    data: {
+                        name: $("#input_name").val(),
+                        geschmack: $("#input_geschmack").val(),
+                        preis: $("#input_preis").val()
+                    },
+                    success: function(data) {
+                        // added to db
+                        location.reload()
+                    }
+                });
+            };
         }
     </script>
 </body>
