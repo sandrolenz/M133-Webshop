@@ -26,7 +26,7 @@
         </select>
         <input type="number" placeholder="Preis" id="input_preis" required>
         <br>&nbsp&nbsp<br>
-        <button type="submit" value="Submit" onclick="addproduct()">Hinzufügen</button>
+        <button type="submit" value="Submit" onclick="addProduct()">Hinzufügen</button>
     </div>
 
     <div class="vertical-spacer"></div>
@@ -37,13 +37,13 @@
     </div>
 
     <script type="text/javascript">
-        function addproduct() {
+        function addProduct() {
             // validation
             var write = true;
             
             if($("#input_name").val() == "" || $("#input_preis").val() == "") {
                 write = false;
-                alert("Bitte füllen Sie alle Felder aus"):
+                alert("Bitte füllen Sie alle Felder aus!");
                 return
             } else {
                 // add to database
