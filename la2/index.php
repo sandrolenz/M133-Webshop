@@ -41,6 +41,11 @@
         <?php require "./assets/php/getproducts.php" ?>
     </div>
 
+    <div class="vertical-spacer"></div>
+    <div class="centered" id="footer">
+        <img src="./assets/icon.png" width="10%">
+    </div>
+
     <script type="text/javascript">
         function addProduct() {
             // validation
