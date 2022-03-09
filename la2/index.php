@@ -12,21 +12,25 @@
 </head>
 
 <body>
-    <h1 class="centered">Webinterface</h1>
+    <div class="centered" id="title">
+        <h1>muffinshop Webinterface</h1>
+    </div>
 
     <div class="vertical-spacer"></div>
 
     <h3 class="centered">Neues Produkt</h3>
     <div class="centered" id="new-product">
         <input type="text" placeholder="Name" id="input_name" required>
+        <br>&nbsp<br>
         <select name="Geschmack" id="input_geschmack" required>
             <option value="1">banane</option>
             <option value="2">schokolade</option>
             <option value="3">erdbeer</option>
             <option value="4">zitrone</option>
         </select>
+        <br>&nbsp<br>
         <input type="number" placeholder="Preis" id="input_preis" required>
-        <br>&nbsp&nbsp<br>
+        <br>&nbsp&nbsp&nbsp<br>
         <button type="submit" value="Submit" onclick="addProduct()">Hinzufügen</button>
     </div>
 

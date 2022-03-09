@@ -15,3 +15,7 @@ h3 {
 div.vertical-spacer {
     height: 10vh;
 }
+
+#title {
+    background-color: bisque;
+}
