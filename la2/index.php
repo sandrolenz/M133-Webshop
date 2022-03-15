@@ -23,10 +23,7 @@
         <input type="text" placeholder="Name" id="input_name" required>
         <br>&nbsp<br>
         <select name="Geschmack" id="input_geschmack" required>
-            <option value="1">banane</option>
-            <option value="2">schokolade</option>
-            <option value="3">erdbeer</option>
-            <option value="4">zitrone</option>
+            <?php require "./assets/php/getgeschmack.php"?>
         </select>
         <br>&nbsp<br>
         <input type="number" placeholder="Preis" id="input_preis" required>
