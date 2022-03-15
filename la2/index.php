@@ -13,7 +13,7 @@
 
 <body>
     <div class="centered" id="title">
-        <h1>muffinshop Webinterface</h1>
+        <h1>PHP-Webinterface</h1>
     </div>
 
     <div class="vertical-spacer"></div>
@@ -44,6 +44,8 @@
     <div class="vertical-spacer"></div>
     <div class="centered" id="footer">
         <img src="./assets/icon.png" width="10%">
+        <br>
+        <small>© 2022 - Sandro Lenz</small>
     </div>
 
     <script type="text/javascript">

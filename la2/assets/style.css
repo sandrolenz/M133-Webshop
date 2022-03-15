@@ -13,9 +13,14 @@ h3 {
 }
 
 div.vertical-spacer {
-    height: 10vh;
+    height: 5vh;
 }
 
 #title {
     background-color: bisque;
+}
+
+#footer {
+    flex-direction: column;
+    align-items: center;
 }
