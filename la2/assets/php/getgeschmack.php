@@ -12,12 +12,13 @@ try {
 }
 
 // -------------------------
-// Get all products
+// Get all scents
 // -------------------------
 
-$sql = "SELECT * FROM geschmack";
-foreach ($dblink->query($sql) as $row) {
-    echo '<option value="'.$row['id'].'">'.$row['geschmack'].'</option>';
-}
+$statement = $dblink->prepare("SELECT id, geschmack FROM geschmack");
+$statement->execute();
+
+$result = $statement->fetchAll(PDO::FETCH_ASSOC);
+$geschmackJSON = $result;
 
 ?>

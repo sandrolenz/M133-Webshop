@@ -15,11 +15,10 @@ try {
 // Get all products
 // -------------------------
 
-$sql = "SELECT produkt.name, produkt.preis, geschmack.geschmack FROM produkt INNER JOIN geschmack ON produkt.fk_geschmack = geschmack.id";
-foreach ($dblink->query($sql) as $row) {
-    echo '<div id="item" class="centered">';
-    echo "<b>".$row['name']."</b>&nbsp(".$row['geschmack'].")&nbspCHF ".$row['preis']."";
-    echo "</div><br>";
-}
+$statement = $dblink->prepare("SELECT produkt.name, produkt.preis, geschmack.geschmack FROM produkt INNER JOIN geschmack ON produkt.fk_geschmack = geschmack.id");
+$statement->execute();
+
+$result = $statement->fetchAll(PDO::FETCH_ASSOC);
+$produkteJSON = $result;
 
 ?>

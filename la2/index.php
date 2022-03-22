@@ -11,6 +11,9 @@
     <link rel="icon" type="icon/png" href="./assets/icon.png">
 </head>
 
+<?php require "./assets/php/getgeschmack.php" ?>
+<?php require "./assets/php/getproducts.php" ?>
+
 <body>
     <div class="centered" id="title">
         <h1>PHP-Webinterface</h1>
@@ -23,7 +26,11 @@
         <input type="text" placeholder="Name" id="input_name" required>
         <br>&nbsp<br>
         <select name="Geschmack" id="input_geschmack" required>
-            <?php require "./assets/php/getgeschmack.php"?>
+            <?php
+                foreach ($geschmackJSON as $key) {
+                    echo "<option value=".$key["id"].">".$key["geschmack"]."</option>";
+                } 
+            ?>
         </select>
         <br>&nbsp<br>
         <input type="number" placeholder="Preis" id="input_preis" required>
@@ -35,10 +42,15 @@
 
     <h3 class="centered">Aktuelle Produkte</h3>
     <div id="product-list">
-        <?php require "./assets/php/getproducts.php" ?>
+        <?php
+            foreach ($produkteJSON as $key) {
+                echo '<div id="item" class="centered"><b>'.$key["name"].'</b>&nbsp('.$key["geschmack"].'&nbspCHF '.$key["preis"].'</div>';
+            }
+        ?>
     </div>
 
     <div class="vertical-spacer"></div>
+
     <div class="centered" id="footer">
         <img src="./assets/icon.png" width="10%">
         <br>
@@ -46,11 +58,22 @@
     </div>
 
     <script type="text/javascript">
+        // get & display products
+        jQuery.ajax({
+            type: "GET",
+            url: './assets/php/getproducts.php',
+            success: function(data) {
+                var test = data;
+                document.getElementById("product-list").innerHTML = test;
+            }
+        });
+
+        // function to add products
         function addProduct() {
             // validation
             var write = true;
-            
-            if($("#input_name").val() == "" || $("#input_preis").val() == "") {
+
+            if ($("#input_name").val() == "" || $("#input_preis").val() == "") {
                 write = false;
                 alert("Bitte füllen Sie alle Felder aus!");
                 return
