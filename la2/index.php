@@ -29,7 +29,7 @@
             <?php
                 foreach ($geschmackJSON as $key) {
                     echo "<option value=".$key["id"].">".$key["geschmack"]."</option>";
-                } 
+                };
             ?>
         </select>
         <br>&nbsp<br>
@@ -44,8 +44,8 @@
     <div id="product-list">
         <?php
             foreach ($produkteJSON as $key) {
-                echo '<div id="item" class="centered"><b>'.$key["name"].'</b>&nbsp('.$key["geschmack"].'&nbspCHF '.$key["preis"].'</div>';
-            }
+                echo '<div id="item" class="centered"><b>'.$key["name"].'</b>&nbsp('.$key["geschmack"].')&nbspCHF '.$key["preis"].'</div>';
+            };
         ?>
     </div>
 
@@ -58,16 +58,6 @@
     </div>
 
     <script type="text/javascript">
-        // get & display products
-        jQuery.ajax({
-            type: "GET",
-            url: './assets/php/getproducts.php',
-            success: function(data) {
-                var test = data;
-                document.getElementById("product-list").innerHTML = test;
-            }
-        });
-
         // function to add products
         function addProduct() {
             // validation
