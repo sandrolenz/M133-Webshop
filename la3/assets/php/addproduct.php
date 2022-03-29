@@ -22,8 +22,8 @@ $geschmack = $_POST["geschmack"];
 // $sql = "INSERT INTO `produkt` (`id`, `name`, `preis`, `fk_geschmack`) VALUES (NULL, '$name', '$preis', '$geschmack')";
 // $dblink->query($sql);
 
-$statement = $pdo->prepare("INSERT INTO `produkt` (`id`, `name`, `preis`, `fk_geschmack`) VALUES (NULL, ?, ?, ?)");
-$statement->execute(array('$name', '$preis', '$geschmack'));   
+$statement = $dblink->prepare("INSERT INTO `produkt` (`id`, `name`, `preis`, `fk_geschmack`) VALUES (NULL, ?, ?, ?)");
+$statement->execute(array($name, $preis, $geschmack));
 while($row = $statement->fetch()) {
    // Product added 
 }
