@@ -1,5 +1,5 @@
-<?php 
-    session_start()
+<?php
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -24,9 +24,12 @@
 
     <h3 class="centered">Ihr Benutzer:</h3>
     <a class="centered">Angemeldet als&nbsp<b><?php echo $_SESSION["username"] ?></b></a>
-    <a class="centered">Ihr Passwort lautet&nbsp<b><?php echo $_SESSION["password"] ?></b></a>
 
     <div class="vertical-spacer"></div>
+
+    <div class="centered" id="logout">
+        <button onclick="logout()">Abmelden</button>
+    </div>
 
     <div class="vertical-spacer"></div>
     <div class="centered" id="footer">
@@ -35,5 +38,10 @@
         <small>© 2022 - Sandro Lenz</small>
     </div>
 </body>
+<script>
+    function logout() {
+        window.location.href = "./assets/php/destroysession.php";
+    }
+</script>
 
 </html>
