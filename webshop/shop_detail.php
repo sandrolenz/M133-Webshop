@@ -53,133 +53,138 @@
                 </div>
         </header>
         <!--End header-->
+
+        <?php require "./data/getproducts.php" ?>
+
         <div class="no-pd" id="content">
             <div class="container">
                 <div class="shop-detail">
                     <div class="row">
-                        <div class="col-12 col-md-6">
-                            <div class="shop-detail__image">
-                                <div class="slider slider-single">
-                                    <div class="slider-single__item"><img src="assets/images/products/1.png" alt="Product image" /></div>
+                        <?php
+                        foreach ($productsJSON as $key) {
+                            echo '<div class="col-12 col-md-6">
+                                <div class="shop-detail__image">
+                                    <div class="slider slider-single">
+                                        <div class="slider-single__item"><img src="assets/images/products/' . $key["id"] . '.png" alt="Product image">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <div class="shop-detail__content">
-                                <div class="shop-detail__content__top">
-                                    <h1>Produkt 1</h1>
-                                    <p class="brand">Nikin Clothing (Schweiz)</p>
-                                    <div class="price">
-                                        <h3>$460.0</h3><span class="discount">$500.0</span>
+                            <div class="col-12 col-md-6">
+                                <div class="shop-detail__content">
+                                    <div class="shop-detail__content__top">
+                                        <h1>' . $key["name"] . '</h1>
+                                        <p class="brand">' . $key["brand"] . ' (' . $key["country"] . ')</p>
+                                        <div class="price">
+                                        <h3>CHF ' . $key["price"] . '</h3>
                                     </div>
-                                    <p class="description">Nemo enim ipsam voluptatem quia aspernatur aut odit aut loret fugit, sed quia consequuntur magni lores eos qui ratione voluptatem sequi nesciunt.</p>
+                                    <p class="description">' . $key["description"] . '</p>
                                     <div class="product-controller">
-                                        <a class="normal-btn no-round" href="shop_cart.html">In den Einkaufswagen</a>
+                                        <a class="normal-btn no-round" href="shop_cart.php">In den Einkaufswagen</a>
                                     </div>
                                 </div>
                                 <div class="shop-detail__content__bottom">
                                     <div class="type-block">
-                                        <p class="type-name">Kategorie:</p>
-                                        <p class="type-detail">Kleidung, T-Shirt</p>
-                                    </div>
-                                    <div class="type-block">
-                                        <p class="type-name">Farbe:</p>
-                                        <p class="type-detail">Dunkelgrau</p>
+                                        <p class="type-name">Geschmack:</p>
+                                        <p class="type-detail">' . $key["scent"] . '</p>
                                     </div>
                                     <div class="type-block">
                                         <p class="type-name">Marke:</p>
-                                        <p class="type-detail">Nikin Clothing (Schweiz)</p>
+                                        <p class="type-detail">' . $key["brand"] . ' (' . $key["country"] . ')</p>
                                     </div>
                                     <div class="type-block">
                                         <p class="type-name">Bestellung:</p>
-                                        <p class="type-detail">Bis 17:00 bestellt, morgen geliefert<br>Kostenloser Versand ab $25.00</p>
+                                        <p class="type-detail">Bis 17:00 bestellt, morgen geliefert<br>Kostenloser Versand ab CHF 25.00</p>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                            </div>';
+                        };
+                        ?>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    </div>
+    </div>
     <!--End shop-->
-        <section class="instagram">
-            <div class="container">
-                <div class="instagram-posts">
-                    <a class="instagram-img_block" href="https://www.instagram.com/" target="_blank"><img src="assets/images/instagram/1.png" alt="instagram post">
-                        <div class="instagram-post_block"><i class="fab fa-instagram"></i>
-                            <p>Instagram</p>
-                        </div>
-                    </a>
-                    <a class="instagram-img_block" href="https://www.instagram.com/" target="_blank"><img src="assets/images/instagram/2.png" alt="instagram post">
-                        <div class="instagram-post_block"><i class="fab fa-instagram"></i>
-                            <p>Instagram</p>
-                        </div>
-                    </a>
-                    <a class="instagram-img_block" href="https://www.instagram.com/" target="_blank"><img src="assets/images/instagram/3.png" alt="instagram post">
-                        <div class="instagram-post_block"><i class="fab fa-instagram"></i>
-                            <p>Instagram</p>
-                        </div>
-                    </a>
-                    <a class="instagram-img_block" href="https://www.instagram.com/" target="_blank"><img src="assets/images/instagram/4.png" alt="instagram post">
-                        <div class="instagram-post_block"><i class="fab fa-instagram"></i>
-                            <p>Instagram</p>
-                        </div>
-                    </a>
-                    <a class="instagram-img_block" href="https://www.instagram.com/" target="_blank"><img src="assets/images/instagram/5.png" alt="instagram post">
-                        <div class="instagram-post_block"><i class="fab fa-instagram"></i>
-                            <p>Instagram</p>
-                        </div>
-                    </a>
-                    <a class="instagram-img_block" href="https://www.instagram.com/" target="_blank"><img src="assets/images/instagram/3.png" alt="instagram post">
-                        <div class="instagram-post_block"><i class="fab fa-instagram"></i>
-                            <p>Instagram</p>
-                        </div>
-                    </a>
-                    <a class="instagram-img_block" href="https://www.instagram.com/" target="_blank"><img src="assets/images/instagram/2.png" alt="instagram post">
-                        <div class="instagram-post_block"><i class="fab fa-instagram"></i>
-                            <p>Instagram</p>
-                        </div>
-                    </a>
-                </div>
+    <section class="instagram">
+        <div class="container">
+            <div class="instagram-posts">
+                <a class="instagram-img_block" href="https://www.instagram.com/" target="_blank"><img src="assets/images/instagram/1.png" alt="instagram post">
+                    <div class="instagram-post_block"><i class="fab fa-instagram"></i>
+                        <p>Instagram</p>
+                    </div>
+                </a>
+                <a class="instagram-img_block" href="https://www.instagram.com/" target="_blank"><img src="assets/images/instagram/2.png" alt="instagram post">
+                    <div class="instagram-post_block"><i class="fab fa-instagram"></i>
+                        <p>Instagram</p>
+                    </div>
+                </a>
+                <a class="instagram-img_block" href="https://www.instagram.com/" target="_blank"><img src="assets/images/instagram/3.png" alt="instagram post">
+                    <div class="instagram-post_block"><i class="fab fa-instagram"></i>
+                        <p>Instagram</p>
+                    </div>
+                </a>
+                <a class="instagram-img_block" href="https://www.instagram.com/" target="_blank"><img src="assets/images/instagram/4.png" alt="instagram post">
+                    <div class="instagram-post_block"><i class="fab fa-instagram"></i>
+                        <p>Instagram</p>
+                    </div>
+                </a>
+                <a class="instagram-img_block" href="https://www.instagram.com/" target="_blank"><img src="assets/images/instagram/5.png" alt="instagram post">
+                    <div class="instagram-post_block"><i class="fab fa-instagram"></i>
+                        <p>Instagram</p>
+                    </div>
+                </a>
+                <a class="instagram-img_block" href="https://www.instagram.com/" target="_blank"><img src="assets/images/instagram/3.png" alt="instagram post">
+                    <div class="instagram-post_block"><i class="fab fa-instagram"></i>
+                        <p>Instagram</p>
+                    </div>
+                </a>
+                <a class="instagram-img_block" href="https://www.instagram.com/" target="_blank"><img src="assets/images/instagram/2.png" alt="instagram post">
+                    <div class="instagram-post_block"><i class="fab fa-instagram"></i>
+                        <p>Instagram</p>
+                    </div>
+                </a>
             </div>
-        </section>
-        <!--End instagram-->
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8">
-                        <div class="row">
-                            <div class="col-sm-6 col-md-3 col-lg-4">
-                                <div class="footer-links">
-                                    <h5 class="footer-link--title">Informationen</h5>
-                                    <ul>
-                                        <li><a class="footer-link" href="index.html">Startseite</a></li>
-                                        <li><a class="footer-link" href="shop_sidebar_3col.php">Shop</a></li>
-                                        <li><a class="footer-link" href="about_us.html">Über uns</a></li>
-                                        <li><a class="footer-link" href="contact.html">Kontakt</a></li>
-                                    </ul>
-                                </div>
+        </div>
+    </section>
+    <!--End instagram-->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-3 col-lg-4">
+                            <div class="footer-links">
+                                <h5 class="footer-link--title">Informationen</h5>
+                                <ul>
+                                    <li><a class="footer-link" href="index.html">Startseite</a></li>
+                                    <li><a class="footer-link" href="shop_sidebar_3col.php">Shop</a></li>
+                                    <li><a class="footer-link" href="about_us.html">Über uns</a></li>
+                                    <li><a class="footer-link" href="contact.html">Kontakt</a></li>
+                                </ul>
                             </div>
-                            <div class="col-sm-12 col-md-6 col-lg-4">
-                                <div class="footer-contact">
-                                    <h5 class="footer-link--title">Kontakt</h5>
-                                    <div class="contact-method">
-                                        <p>Ausstellungsstrase 70, 8005 Zürich</p>
-                                        <p>sandro.lenz@edu.tbz.ch</p>
-                                    </div>
-                                    <div class="social-contact"><a class="icon-btn" href="https://www.github.com/sandrolenz/M133-Webshop" target="_blank"><i class="fab fa-github"></i></a></div>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-4">
+                            <div class="footer-contact">
+                                <h5 class="footer-link--title">Kontakt</h5>
+                                <div class="contact-method">
+                                    <p>Ausstellungsstrase 70, 8005 Zürich</p>
+                                    <p>sandro.lenz@edu.tbz.ch</p>
                                 </div>
+                                <div class="social-contact"><a class="icon-btn" href="https://www.github.com/sandrolenz/M133-Webshop" target="_blank"><i class="fab fa-github"></i></a></div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <p class="copyright">© 2022 Pisen Webshop</p>
-                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <p class="copyright">© 2022 Pisen Webshop</p>
                 </div>
             </div>
-        </footer>
-        <!--End footer-->
+        </div>
+    </footer>
+    <!--End footer-->
     <script src="assets/js/jquery-3.4.0.min.js"></script>
     <script src="assets/js/jquery-ui.min.js"></script>
     <script src="assets/js/slick.min.js"></script>

@@ -53,6 +53,9 @@
                 </div>
         </header>
         <!--End header-->
+
+        <?php require "./data/getproducts.php" ?>
+
         <section class="shop">
             <div class="container">
                 <div class="shop-3col-sidebar">
@@ -62,7 +65,7 @@
                                 <div class="post-classic-tib bg-center" style="background-image: url('assets/images/shop/big-post.png')">
                                     <div class="post-detail"><a class="post-title" href="shop_detail.html">Pisen x Lindt - Muffin-Überraschungsbox</a>
                                         <p class="post-describe">Erhalten sie 5 zufällige Muffins aus der Überraschungsbox! In Zusammenarbeit mit Lindt.</p>
-                                        <button class="normal-btn no-round" onclick="window.location.href='shop_detail.html'">Jetzt bestellen</button>
+                                        <button class="normal-btn no-round" onclick="window.location.href='shop_detail.php'">Jetzt bestellen</button>
                                     </div>
                                     <div class="post-overlay"></div>
                                 </div>
@@ -70,188 +73,33 @@
                         </div>
                         <div class="col-12 col-xl-3">
                             <div class="sidebar-wrapper">
-                                <div class="shop-sidebar">
-                                    <div class="categories">
-                                        <h2 class="shop-sidebar--title">Kategorien</h2>
-                                        <ul>
-                                            <li class="checkbox-group">
-                                                <input id="trademark" type="checkbox">
-                                                <label for="trademark">Brote</label>
-                                            </li>
-                                            <li class="checkbox-group">
-                                                <input id="entertainment" type="checkbox">
-                                                <label for="entertainment">Kuchen</label>
-                                            </li>
-                                            <li class="checkbox-group">
-                                                <input id="marketing" type="checkbox">
-                                                <label for="marketing">Muffins</label>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="price-filter">
-                                        <h2 class="shop-sidebar--title">Nach Preis filtern</h2>
-                                        <div id="slider-range"></div>
-                                        <p>
-                                            <input id="amount" type="text" readonly="">
-                                        </p>
-                                    </div>
-                                </div>
+                                <a href="http://mforyou.bplaced.net/" target="_blank">
+                                    <img src="./assets/images/promo/1.png" alt="nightlight">
+                                </a>
                             </div>
                         </div>
                         <div class="col-12 col-xl-9">
-                            <div class="products-top_bar">
-                                <div class="row align-items-center no-gutters justify-content-between">
-                                    <div class="col-12 col-md-5 col-xl-5">
-                                        <div class="product-show_block">
-                                            <div class="product-found">
-                                                <h5><span>10</span>Produkte gefunden</h5>
-                                            </div>
-                                            <h5 id="open-shop-sidebar">Sidebar öffnen</h5>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-6 col-xl-7">
-                                        <div class="product-detail_filter">
-                                            <div class="sort">
-                                                <label for="sort">Sortieren</label>
-                                                <select id="sort" name="sort">
-                            <option value="A-Z">A-Z</option>
-                            <option value="Z-A">Z-A</option>
-                            <option value="lowtohigh">Preis niedrig bis hoch</option>
-                            <option value="hightolow">Preis hoch bis niedrig</option>
-                            <option value="popular">Beliebt</option>
-                          </select>
-                                            </div>
-                                            <div class="show">
-                                                <label for="sort">Anzahl</label>
-                                                <select id="show" name="show">
-                            <option value="15">15</option>
-                            <option value="20">20</option>
-                            <option value="25">25</option>
-                          </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <div class="products-top_bar"></div>
                             <div class="products-bottom">
                                 <div class="row">
-                                    <div class="col-6 col-md-4 col-lg-3 col-xl-4">
-                                        <div class="product-block">
-                                            <a class="product-img" href="shop_detail.html"><img src="assets/images/products/1.png" alt="product image">
+                                    <?php
+                                    foreach ($productsJSON as $key) {
+                                        echo '<div class="col-6 col-md-4 col-lg-3 col-xl-4">
+                                            <div class="product-block">
+                                            <a class="product-img" href="shop_detail.php?product=' . $key["id"] .'">
+                                                <img src="assets/images/products/' . $key["id"] . '.png" alt="product image">
                                                 <div class="product-select">
                                                     <button class="add-cart"><i class="icon_bag_alt"></i></button>
                                                 </div>
                                             </a>
                                             <div class="product-detail">
-                                                <div class="product-name"><a href="shop_detail.html">logo</a></div>
-                                                <h3 class="product-price">26.00</h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6 col-md-4 col-lg-3 col-xl-4">
-                                        <div class="product-block">
-                                            <a class="product-img" href="shop_detail.html"><img src="assets/images/products/2.png" alt="product image">
-                                                <div class="product-select">
-                                                    <button class="add-cart"><i class="icon_bag_alt"></i></button>
+                                                <div class="product-name"><a href="shop_detail.php?product=' . $key["id"] .'">' . $key["name"] . '</a></div>
+                                                <h3 class="product-price">' . $key["price"] . '</h3>
                                                 </div>
-                                            </a>
-                                            <div class="product-detail">
-                                                <div class="product-name"><a href="shop_detail.html">logo</a></div>
-                                                <h3 class="product-price">26.00</h3>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6 col-md-4 col-lg-3 col-xl-4">
-                                        <div class="product-block">
-                                            <a class="product-img" href="shop_detail.html"><img src="assets/images/products/3.png" alt="product image">
-                                                <div class="product-select">
-                                                    <button class="add-cart"><i class="icon_bag_alt"></i></button>
-                                                </div>
-                                            </a>
-                                            <div class="product-detail">
-                                                <div class="product-name"><a href="shop_detail.html">logo</a></div>
-                                                <h3 class="product-price">26.00</h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6 col-md-4 col-lg-3 col-xl-4">
-                                        <div class="product-block">
-                                            <a class="product-img" href="shop_detail.html"><img src="assets/images/products/4.png" alt="product image">
-                                                <div class="product-select">
-                                                    <button class="add-cart"><i class="icon_bag_alt"></i></button>
-                                                </div>
-                                            </a>
-                                            <div class="product-detail">
-                                                <div class="product-name"><a href="shop_detail.html">logo</a></div>
-                                                <h3 class="product-price">26.00</h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6 col-md-4 col-lg-3 col-xl-4">
-                                        <div class="product-block">
-                                            <a class="product-img" href="shop_detail.html"><img src="assets/images/products/5.png" alt="product image">
-                                                <div class="product-select">
-                                                    <button class="add-cart"><i class="icon_bag_alt"></i></button>
-                                                </div>
-                                            </a>
-                                            <div class="product-detail">
-                                                <div class="product-name"><a href="shop_detail.html">logo</a></div>
-                                                <h3 class="product-price">26.00</h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6 col-md-4 col-lg-3 col-xl-4">
-                                        <div class="product-block">
-                                            <a class="product-img" href="shop_detail.html"><img src="assets/images/products/6.png" alt="product image">
-                                                <div class="product-select">
-                                                    <button class="add-cart"><i class="icon_bag_alt"></i></button>
-                                                </div>
-                                            </a>
-                                            <div class="product-detail">
-                                                <div class="product-name"><a href="shop_detail.html">logo</a></div>
-                                                <h3 class="product-price">26.00</h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6 col-md-4 col-lg-3 col-xl-4">
-                                        <div class="product-block">
-                                            <a class="product-img" href="shop_detail.html"><img src="assets/images/products/7.png" alt="product image">
-                                                <div class="product-select">
-                                                    <button class="add-cart"><i class="icon_bag_alt"></i></button>
-                                                </div>
-                                            </a>
-                                            <div class="product-detail">
-                                                <div class="product-name"><a href="shop_detail.html">logo</a></div>
-                                                <h3 class="product-price">26.00</h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6 col-md-4 col-lg-3 col-xl-4">
-                                        <div class="product-block">
-                                            <a class="product-img" href="shop_detail.html"><img src="assets/images/products/8.png" alt="product image">
-                                                <div class="product-select">
-                                                    <button class="add-cart"><i class="icon_bag_alt"></i></button>
-                                                </div>
-                                            </a>
-                                            <div class="product-detail">
-                                                <div class="product-name"><a href="shop_detail.html">logo</a></div>
-                                                <h3 class="product-price">26.00</h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6 col-md-4 col-lg-3 col-xl-4">
-                                        <div class="product-block">
-                                            <a class="product-img" href="shop_detail.html"><img src="assets/images/products/9.png" alt="product image">
-                                                <div class="product-select">
-                                                    <button class="add-cart"><i class="icon_bag_alt"></i></button>
-                                                </div>
-                                            </a>
-                                            <div class="product-detail">
-                                                <div class="product-name"><a href="shop_detail.html">logo</a></div>
-                                                <h3 class="product-price">26.00</h3>
-                                            </div>
-                                        </div>
-                                    </div>
+                                        </div>';
+                                    };
+                                    ?>
                                 </div>
                             </div>
                         </div>
