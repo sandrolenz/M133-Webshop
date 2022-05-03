@@ -34,8 +34,8 @@
                                 <div class="mobile-menu"><a href="#" id="showMenu"><i class="fas fa-bars"></i></a></div>
                                 <nav class="navigation">
                                     <ul>
-                                        <li class="nav-item"><a class="pisen-nav-link" href="index.html">Startseite</a></li>
-                                        <li class="nav-item"><a class="pisen-nav-link active" href="shop_sidebar_3col.html">Shop</a></li>
+                                        <li class="nav-item"><a class="pisen-nav-link active" href="index.html">Startseite</a></li>
+                                        <li class="nav-item"><a class="pisen-nav-link" href="shop_sidebar_3col.php">Shop</a></li>
                                         <li class="nav-item"><a class="pisen-nav-link" href="about_us.html">Über uns</a></li>
                                         <li class="nav-item"><a class="pisen-nav-link" href="contact.html">Kontakt</a></li>
                                     </ul>
@@ -44,13 +44,13 @@
                             <div class="col-0 col-xl-2">
                                 <div class="menu-function">
                                     <div id="search"><a class="search-btn" href="#"><i class="fas fa-search"></i></a></div>
-                                    <div class="social-contact"><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a><a href="https://twitter.com/"><i class="fab fa-twitter"></i></a></div>
+                                    <div class="social-contact"><a href="https://www.github.com/sandrolenz/M133-Webshop" target="_blank"><i class="fab fa-github"></i></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
         </header>
         <!--End header-->
         <section class="shop">
@@ -169,37 +169,37 @@
         <section class="instagram">
             <div class="container">
                 <div class="instagram-posts">
-                    <a class="instagram-img_block" href="https://www.instagram.com/"><img src="assets/images/instagram/1.png" alt="instagram post">
+                    <a class="instagram-img_block" href="https://www.instagram.com/" target="_blank"><img src="assets/images/instagram/1.png" alt="instagram post">
                         <div class="instagram-post_block"><i class="fab fa-instagram"></i>
                             <p>Instagram</p>
                         </div>
                     </a>
-                    <a class="instagram-img_block" href="https://www.instagram.com/"><img src="assets/images/instagram/2.png" alt="instagram post">
+                    <a class="instagram-img_block" href="https://www.instagram.com/" target="_blank"><img src="assets/images/instagram/2.png" alt="instagram post">
                         <div class="instagram-post_block"><i class="fab fa-instagram"></i>
                             <p>Instagram</p>
                         </div>
                     </a>
-                    <a class="instagram-img_block" href="https://www.instagram.com/"><img src="assets/images/instagram/3.png" alt="instagram post">
+                    <a class="instagram-img_block" href="https://www.instagram.com/" target="_blank"><img src="assets/images/instagram/3.png" alt="instagram post">
                         <div class="instagram-post_block"><i class="fab fa-instagram"></i>
                             <p>Instagram</p>
                         </div>
                     </a>
-                    <a class="instagram-img_block" href="https://www.instagram.com/"><img src="assets/images/instagram/4.png" alt="instagram post">
+                    <a class="instagram-img_block" href="https://www.instagram.com/" target="_blank"><img src="assets/images/instagram/4.png" alt="instagram post">
                         <div class="instagram-post_block"><i class="fab fa-instagram"></i>
                             <p>Instagram</p>
                         </div>
                     </a>
-                    <a class="instagram-img_block" href="https://www.instagram.com/"><img src="assets/images/instagram/5.png" alt="instagram post">
+                    <a class="instagram-img_block" href="https://www.instagram.com/" target="_blank"><img src="assets/images/instagram/5.png" alt="instagram post">
                         <div class="instagram-post_block"><i class="fab fa-instagram"></i>
                             <p>Instagram</p>
                         </div>
                     </a>
-                    <a class="instagram-img_block" href="https://www.instagram.com/"><img src="assets/images/instagram/3.png" alt="instagram post">
+                    <a class="instagram-img_block" href="https://www.instagram.com/" target="_blank"><img src="assets/images/instagram/3.png" alt="instagram post">
                         <div class="instagram-post_block"><i class="fab fa-instagram"></i>
                             <p>Instagram</p>
                         </div>
                     </a>
-                    <a class="instagram-img_block" href="https://www.instagram.com/"><img src="assets/images/instagram/2.png" alt="instagram post">
+                    <a class="instagram-img_block" href="https://www.instagram.com/" target="_blank"><img src="assets/images/instagram/2.png" alt="instagram post">
                         <div class="instagram-post_block"><i class="fab fa-instagram"></i>
                             <p>Instagram</p>
                         </div>
@@ -218,7 +218,7 @@
                                     <h5 class="footer-link--title">Informationen</h5>
                                     <ul>
                                         <li><a class="footer-link" href="index.html">Startseite</a></li>
-                                        <li><a class="footer-link" href="shop_sidebar_3col.html">Shop</a></li>
+                                        <li><a class="footer-link" href="shop_sidebar_3col.php">Shop</a></li>
                                         <li><a class="footer-link" href="about_us.html">Über uns</a></li>
                                         <li><a class="footer-link" href="contact.html">Kontakt</a></li>
                                     </ul>
@@ -231,24 +231,12 @@
                                         <p>Ausstellungsstrase 70, 8005 Zürich</p>
                                         <p>sandro.lenz@edu.tbz.ch</p>
                                     </div>
-                                    <div class="social-contact"><a class="icon-btn" href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a><a class="icon-btn" href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
-                                        <a class="icon-btn" href="https://twitter.com/"><i class="fab fa-twitter"></i></a><a class="icon-btn" href="https://dribbble.com/"><i class="fab fa-dribbble"></i></a></div>
+                                    <div class="social-contact"><a class="icon-btn" href="https://www.github.com/sandrolenz/M133-Webshop" target="_blank"><i class="fab fa-github"></i></a></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4">
-                        <h5 class="footer-link--title">Newsletter abbonieren</h5>
-                        <form action="" method="post">
-                            <div class="email-form">
-                                <input class="input-form" type="text" placeholder="E-Mail Adresse eingeben">
-                                <button> <i class="fas fa-paper-plane"></i></button>
-                            </div>
-                            <div class="read-policy">
-                                <input type="checkbox" id="read">
-                                <label for="read">Ich akzeptiere die Datenschutzerklärung</label>
-                            </div>
-                        </form>
                         <p class="copyright">© 2022 Pisen Webshop</p>
                     </div>
                 </div>
