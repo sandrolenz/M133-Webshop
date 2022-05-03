@@ -53,6 +53,9 @@
                 </div>
         </header>
         <!--End header-->
+
+        <?php require "./data/getproducts.php" ?>
+
         <section class="shop">
             <div class="container">
                 <div class="shop-cart">
@@ -79,22 +82,26 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td class="product-image">
-                                        <div class="img-wrapper"><img src="assets/images/products/1.png" alt="product image"></div>
-                                    </td>
-                                    <td class="product-name">Produkt 1</td>
-                                    <td class="product-price">$460.00</td>
-                                    <td class="product-quantity">
-                                        <div class="quantity-control"><a class="control-btn minus" href="">-</a>
-                                            <input class="quantity no-round-input" type="text" min="1" value="1"><a class="control-btn plus" href="">+</a>
-                                        </div>
-                                    </td>
-                                    <td class="product-total">$460.00</td>
-                                    <td class="product-clear">
-                                        <button class="no-round-btn"><i class="icon_close"></i></button>
-                                    </td>
-                                </tr>
+                                <?php
+                                foreach ($productsJSON as $key) {
+                                    echo '<tr>
+                                        <td class="product-image">
+                                            <div class="img-wrapper"><img src="assets/images/products/' . $key["id"] . '.png" alt="product image"></div>
+                                        </td>
+                                        <td class="product-name">' . $key["name"] . '</td>
+                                        <td class="product-price">CHF ' . $key["price"] . '</td>
+                                        <td class="product-quantity">
+                                            <div class="quantity-control"><a class="control-btn minus" href="">-</a>
+                                                <input class="quantity no-round-input" type="text" min="1" value="1"><a class="control-btn plus" href="">+</a>
+                                            </div>
+                                        </td>
+                                        <td class="product-total">CHF ' . $key["price"] . '</td>
+                                        <td class="product-clear">
+                                            <button class="no-round-btn"><i class="icon_close"></i></button>
+                                        </td>
+                                    </tr>';
+                                };
+                                ?>
                             </tbody>
                         </table>
                     </div>
@@ -120,16 +127,26 @@
                                             <col span="1" style="width: 30%">
                                         </colgroup>
                                         <tbody>
-                                            <tr class="sub-total-row">
-                                                <td class="sub-total--title">Zwischentotal</td>
-                                                <td class="sub-total">$460.00</td>
-                                            </tr>
                                             <tr>
                                                 <td class="total--title">Total</td>
-                                                <td class="total">$460.00</td>
+                                                <td class="total">
+                                                    <script>
+                                                        var totalprice = 0;
+                                                        Array.from(document.getElementsByClassName("product-total")).forEach(
+                                                            function(element, index, array) {
+                                                                if (index != 0) {
+                                                                    console.log(element.innerHTML.split(" ")[1]);
+                                                                    totalprice = totalprice + parseFloat(element.innerHTML.split(" ")[1]);
+                                                                    console.log(totalprice);
+                                                                }
+                                                            }
+                                                        );
+                                                        document.write("CHF " + totalprice);
+                                                    </script>
+                                                </td>
                                             </tr>
                                         </tbody>
-                                    </table><a href="shop_checkout.html">KAUFEN</a>
+                                    </table><a href="shop_checkout.php">KAUFEN</a>
                                 </div>
                             </div>
                         </div>
