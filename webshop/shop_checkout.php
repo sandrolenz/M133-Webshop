@@ -1,3 +1,10 @@
+<?php
+
+session_start();
+$cartJSON = $_SESSION['cart'];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -101,20 +108,6 @@
                                             <input id="phone" type="text">
                                         </div>
                                     </div>
-                                    <div class="form-group create-account">
-                                        <input id="create-account" type="checkbox">
-                                        <label for="create-account">Account erstellen?</label>
-                                    </div>
-                                    <div id="create-account_form">
-                                        <div class="form-group">
-                                            <label for="acc-username">Benutzername*</label>
-                                            <input id="acc-username" type="text" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="acc-password">Passwort*</label>
-                                            <input id="acc-password" type="password" required>
-                                        </div>
-                                    </div>
                                     <h2 class="checkout-title">Zusätzliche Informationen</h2>
                                     <div class="form-group">
                                         <label for="notes">Hinweise zur Bestellung (optional)</label>
@@ -137,16 +130,21 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td class="product">Produkt 1</td>
-                                                <td class="price">$460.00</td>
-                                            </tr>
+                                            <?php
+                                                foreach ($cartJSON as $key) {
+                                                    echo '<tr>
+                                                        <td class="product">' . $key['name'] . '</td>
+                                                        <td class="price">' . $key['price'] . '</td>
+                                                    </tr>';
+                                                };
+                                            ?>
                                             <tr>
                                                 <th>total</th>
-                                                <td class="total-price">$460.00</td>
+                                                <td class="total-price"><?php echo $_SESSION["totalprice"] ?></td>
                                             </tr>
                                         </tbody>
                                     </table>
+                                    <!-- 
                                     <div class="form-group create-account">
                                         <input id="payment" type="checkbox">
                                         <label for="payment">Kartenzahlung</label>
@@ -155,6 +153,7 @@
                                         <input id="paypal" type="checkbox">
                                         <label for="paypal">PayPal</label>
                                     </div>
+                                    -->
                                     <div class="submit-form">
                                         <button id="place-order">Jetzt Bestellen</button>
                                     </div>

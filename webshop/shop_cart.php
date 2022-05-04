@@ -1,3 +1,30 @@
+<?php 
+
+session_start();
+$_SESSION['totalprice'] = "CHF " . "20.00";
+
+$cartJSON = [
+    [
+        "id" => "1",
+        "name" => "Product 1",
+        "price" => "20.00"
+    ],
+    [
+        "id" => "2",
+        "name" => "Product 2",
+        "price" => "20.00"
+    ],
+    [
+        "id" => "3",
+        "name" => "Product 3",
+        "price" => "20.00"
+    ]
+];
+
+$_SESSION['cart'] = $cartJSON;
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -74,27 +101,20 @@
                                     <th class="product-image" scope="col">Bild</th>
                                     <th class="product-name" scope="col">Produkt</th>
                                     <th class="product-price" scope="col">Preis</th>
-                                    <th class="product-quantity" scope="col">Anzahl</th>
                                     <th class="product-total" scope="col">Total</th>
-                                    <th class="product-clear" scope="col">
-                                        <button class="no-round-btn"><i class="icon_close"></i></button>
-                                    </th>
+                                    <th class="product-clear" scope="col">Entfernen</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
-                                foreach ($productsJSON as $key) {
+                                foreach ($cartJSON as $key) {
                                     echo '<tr>
                                         <td class="product-image">
                                             <div class="img-wrapper"><img src="assets/images/products/' . $key["id"] . '.png" alt="product image"></div>
                                         </td>
                                         <td class="product-name">' . $key["name"] . '</td>
                                         <td class="product-price">CHF ' . $key["price"] . '</td>
-                                        <td class="product-quantity">
-                                            <div class="quantity-control"><a class="control-btn minus" href="">-</a>
-                                                <input class="quantity no-round-input" type="text" min="1" value="1"><a class="control-btn plus" href="">+</a>
-                                            </div>
-                                        </td>
+                                        
                                         <td class="product-total">CHF ' . $key["price"] . '</td>
                                         <td class="product-clear">
                                             <button class="no-round-btn"><i class="icon_close"></i></button>
@@ -109,14 +129,7 @@
                         <div class="row justify-content-between">
                             <div class="col-12 col-md-6 col-lg-5 col-xl-4">
                                 <div class="cart-function_block">
-                                    <div class="button-group"><a class="back-to-shop normal-btn" href="shop_sidebar_3col.html">Weiter einkaufen</a><a class="mr-0 update-cart normal-btn" href="shop_cart.html">Warenkorb aktualisieren</a></div>
-                                    <div class="discount">
-                                        <h2>Rabattcode</h2>
-                                        <form action="">
-                                            <input type="text">
-                                            <button>Anwenden</button>
-                                        </form>
-                                    </div>
+                                    <div class="button-group"><a class="back-to-shop normal-btn" href="shop_sidebar_3col.php">Weiter einkaufen</a><a class="mr-0 update-cart normal-btn" href="shop_cart.php">Warenkorb aktualisieren</a></div>
                                 </div>
                             </div>
                             <div class="col-12 col-md-5 col-lg-4">
@@ -146,7 +159,7 @@
                                                 </td>
                                             </tr>
                                         </tbody>
-                                    </table><a href="shop_checkout.php">KAUFEN</a>
+                                    </table><a href="shop_checkout.php">Weiter zur Bezahlung</a>
                                 </div>
                             </div>
                         </div>
