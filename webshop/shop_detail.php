@@ -169,7 +169,7 @@ if (isset($_SESSION['cart'])) {
     <script>
         function addToCart(product) {
             console.log(product);
-            <?php $cartArray ?>.push(product);
+            cartArray.push(product);
             console.log("Current Cart: " + cartArray);
         }
     </script>
