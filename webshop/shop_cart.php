@@ -11,7 +11,7 @@ $cartArray = $_SESSION['cart'];
 <html lang="en">
 
 <head>
-    <title>Index</title>
+    <title>Warenkorb | muffin.</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
     <meta name="keywords" content="blog, business, clean, clear, cooporate, creative, design web, flat, marketing, minimal, portfolio, shop, shopping, unique">
@@ -221,7 +221,7 @@ $cartArray = $_SESSION['cart'];
                         </div>
                     </div>
                     <div class="col-lg-4">
-                        <p class="copyright">© 2022 Pisen Webshop</p>
+                        <p class="copyright">© 2022 muffin.</p>
                     </div>
                 </div>
             </div>
