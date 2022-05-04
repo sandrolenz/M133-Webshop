@@ -1,6 +1,12 @@
-<?php 
+<?php
 
 session_start();
+
+if (isset($_SESSION['cart'])) {
+    $cartArray = $_SESSION['cart'];
+} else {
+    $cartArray = array();
+}
 
 ?>
 
@@ -86,7 +92,7 @@ session_start();
                                     </div>
                                     <p class="description">' . $key["description"] . '</p>
                                     <div class="product-controller">
-                                        <a class="normal-btn no-round" href="shop_cart.php">In den Einkaufswagen</a>
+                                        <button class="normal-btn no-round" onclick="addToCart(' . $key["id"] . ')"><a>In den Einkaufswagen</a></button>
                                     </div>
                                 </div>
                                 <div class="shop-detail__content__bottom">
@@ -95,7 +101,7 @@ session_start();
                                         <p class="type-detail">' . $key["scent"] . '</p>
                                     </div>
                                     <div class="type-block">
-                                        <p class="type-name">Marke:</p>
+                                        <p class="type-name">Hersteller:</p>
                                         <p class="type-detail">' . $key["brand"] . ' (' . $key["country"] . ')</p>
                                     </div>
                                     <div class="type-block">
@@ -114,48 +120,6 @@ session_start();
     </div>
     </div>
     <!--End shop-->
-    <section class="instagram">
-        <div class="container">
-            <div class="instagram-posts">
-                <a class="instagram-img_block" href="https://www.instagram.com/" target="_blank"><img src="assets/images/instagram/1.png" alt="instagram post">
-                    <div class="instagram-post_block"><i class="fab fa-instagram"></i>
-                        <p>Instagram</p>
-                    </div>
-                </a>
-                <a class="instagram-img_block" href="https://www.instagram.com/" target="_blank"><img src="assets/images/instagram/2.png" alt="instagram post">
-                    <div class="instagram-post_block"><i class="fab fa-instagram"></i>
-                        <p>Instagram</p>
-                    </div>
-                </a>
-                <a class="instagram-img_block" href="https://www.instagram.com/" target="_blank"><img src="assets/images/instagram/3.png" alt="instagram post">
-                    <div class="instagram-post_block"><i class="fab fa-instagram"></i>
-                        <p>Instagram</p>
-                    </div>
-                </a>
-                <a class="instagram-img_block" href="https://www.instagram.com/" target="_blank"><img src="assets/images/instagram/4.png" alt="instagram post">
-                    <div class="instagram-post_block"><i class="fab fa-instagram"></i>
-                        <p>Instagram</p>
-                    </div>
-                </a>
-                <a class="instagram-img_block" href="https://www.instagram.com/" target="_blank"><img src="assets/images/instagram/5.png" alt="instagram post">
-                    <div class="instagram-post_block"><i class="fab fa-instagram"></i>
-                        <p>Instagram</p>
-                    </div>
-                </a>
-                <a class="instagram-img_block" href="https://www.instagram.com/" target="_blank"><img src="assets/images/instagram/3.png" alt="instagram post">
-                    <div class="instagram-post_block"><i class="fab fa-instagram"></i>
-                        <p>Instagram</p>
-                    </div>
-                </a>
-                <a class="instagram-img_block" href="https://www.instagram.com/" target="_blank"><img src="assets/images/instagram/2.png" alt="instagram post">
-                    <div class="instagram-post_block"><i class="fab fa-instagram"></i>
-                        <p>Instagram</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-    <!--End instagram-->
     <footer>
         <div class="container">
             <div class="row">
@@ -202,6 +166,14 @@ session_start();
     <script src="assets/js/numscroller-1.0.js"></script>
     <script src="assets/js/jquery.countdown.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+        function addToCart(product) {
+            console.log(product);
+            <?php $cartArray ?>.push(product);
+            console.log("Current Cart: " + cartArray);
+        }
+    </script>
+
     </div>
 </body>
 
