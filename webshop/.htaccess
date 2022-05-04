@@ -1,1 +1,1 @@
-ErrorDocument 404 http://localhost:8080/M133-Pisen_modified/404_error.html
+ErrorDocument 404 /M133-Webshop/webshop/404_error.html
