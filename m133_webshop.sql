@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 04. Mai 2022 um 11:17
+-- Erstellungszeit: 04. Mai 2022 um 15:38
 -- Server-Version: 10.4.17-MariaDB
 -- PHP-Version: 7.4.13
 
@@ -86,7 +86,8 @@ INSERT INTO `product` (`id`, `name`, `description`, `price`, `brand`, `scent`) V
 (1, 'Chocolate', 'Schokoladen-Muffin', '3.50', 1, 1),
 (2, 'Strawberry Dream', 'Schokolade verfeinert mit frischen Erdbeeren.', '4.00', 1, 2),
 (3, 'Golden Banana', 'Banane verfeinert mit Schokoladen-Chips', '4.00', 1, 3),
-(4, 'Muffin Surprise', '5 zufällige Muffins aus der Überraschungsbox! In Zusammenarbeit mit Lindt.', '19.90', 2, 4);
+(4, 'Muffin Surprise', '5 zufällige Muffins aus der Überraschungsbox! In Zusammenarbeit mit Lindt.', '19.90', 2, 4),
+(5, 'Blueberry Almond', 'Das Highlight für jeden Sommerabend. Unser einzigartiges Blaubeer-Muffin mit Mandeln.', '4.00', 1, 5);
 
 -- --------------------------------------------------------
 
@@ -107,7 +108,8 @@ INSERT INTO `scent` (`id`, `name`) VALUES
 (1, 'Schokolade'),
 (2, 'Erdbeere'),
 (3, 'Banane'),
-(4, 'Veschiedene');
+(4, 'Veschiedene'),
+(5, 'Blaubeere');
 
 --
 -- Indizes der exportierten Tabellen
@@ -157,13 +159,13 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT für Tabelle `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT für Tabelle `scent`
 --
 ALTER TABLE `scent`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
