@@ -1,5 +1,12 @@
 jQuery(document).ready(function($) {
 	"use strict";
+
+	if (window.location.href.indexOf("?sortby") > -1) {
+		var properties = window.location.href.split("?sortby=")[1].split("&sort=")[0];
+		var sort = window.location.href.split("&sort=")[1];
+		$("#sort").val(properties + "-" + sort);
+	}
+
 	/************************************
    		Post slide
 	*************************************/
@@ -407,3 +414,8 @@ jQuery(document).ready(function($) {
 	});
 
 });
+
+function sortItems() {
+	properties = document.getElementById("sort").value;
+	window.location.href = "?sortby=" + properties.split("-")[0] + "&sort=" + properties.split("-")[1];
+}

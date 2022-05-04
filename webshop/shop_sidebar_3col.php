@@ -79,21 +79,38 @@
                             </div>
                         </div>
                         <div class="col-12 col-xl-9">
-                            <div class="products-top_bar"></div>
+                            <div class="products-top_bar">
+                                <div class="row align-items-center no-gutters justify-content-between">
+                                    <div class="col-12 col-md-5 col-xl-4"></div>
+                                    <div class="col-12 col-md-6 col-xl-5">
+                                        <div class="product-detail_filter">
+                                            <div class="sort">
+                                                <label for="sort">Sortieren</label>
+                                                <select id="sort" name="sort" onchange="sortItems()">
+                                                    <option value="name-asc">A-Z</option>
+                                                    <option value="name-desc">Z-A</option>
+                                                    <option value="price-asc">Preis niedrig bis hoch</option>
+                                                    <option value="price-desc">Preis hoch bis niedrig</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="products-bottom">
                                 <div class="row">
                                     <?php
                                     foreach ($productsJSON as $key) {
                                         echo '<div class="col-6 col-md-4 col-lg-3 col-xl-4">
                                             <div class="product-block">
-                                            <a class="product-img" href="shop_detail.php?product=' . $key["id"] .'">
+                                            <a class="product-img" href="shop_detail.php?product=' . $key["id"] . '">
                                                 <img src="assets/images/products/' . $key["id"] . '.png" alt="product image">
                                                 <div class="product-select">
                                                     <button class="add-cart"><i class="icon_bag_alt"></i></button>
                                                 </div>
                                             </a>
                                             <div class="product-detail">
-                                                <div class="product-name"><a href="shop_detail.php?product=' . $key["id"] .'">' . $key["name"] . '</a></div>
+                                                <div class="product-name"><a href="shop_detail.php?product=' . $key["id"] . '">' . $key["name"] . '</a></div>
                                                 <h3 class="product-price">' . $key["price"] . '</h3>
                                                 </div>
                                             </div>
@@ -195,7 +212,7 @@
         <script src="assets/js/imagesloaded.pkgd.min.js"></script>
         <script src="assets/js/numscroller-1.0.js"></script>
         <script src="assets/js/jquery.countdown.min.js"></script>
-        <script src="assets/js/main.js"></script>
+        <script src="assets/js/main.js"></script>      
     </div>
 </body>
 
