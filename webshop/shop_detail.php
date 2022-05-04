@@ -120,6 +120,48 @@ if (isset($_SESSION['cart'])) {
     </div>
     </div>
     <!--End shop-->
+    <section class="instagram">
+        <div class="container">
+            <div class="instagram-posts">
+                <a class="instagram-img_block" href="https://www.instagram.com/" target="_blank"><img src="assets/images/instagram/1.png" alt="instagram post">
+                    <div class="instagram-post_block"><i class="fab fa-instagram"></i>
+                        <p>Instagram</p>
+                    </div>
+                </a>
+                <a class="instagram-img_block" href="https://www.instagram.com/" target="_blank"><img src="assets/images/instagram/2.png" alt="instagram post">
+                    <div class="instagram-post_block"><i class="fab fa-instagram"></i>
+                        <p>Instagram</p>
+                    </div>
+                </a>
+                <a class="instagram-img_block" href="https://www.instagram.com/" target="_blank"><img src="assets/images/instagram/3.png" alt="instagram post">
+                    <div class="instagram-post_block"><i class="fab fa-instagram"></i>
+                        <p>Instagram</p>
+                    </div>
+                </a>
+                <a class="instagram-img_block" href="https://www.instagram.com/" target="_blank"><img src="assets/images/instagram/4.png" alt="instagram post">
+                    <div class="instagram-post_block"><i class="fab fa-instagram"></i>
+                        <p>Instagram</p>
+                    </div>
+                </a>
+                <a class="instagram-img_block" href="https://www.instagram.com/" target="_blank"><img src="assets/images/instagram/5.png" alt="instagram post">
+                    <div class="instagram-post_block"><i class="fab fa-instagram"></i>
+                        <p>Instagram</p>
+                    </div>
+                </a>
+                <a class="instagram-img_block" href="https://www.instagram.com/" target="_blank"><img src="assets/images/instagram/3.png" alt="instagram post">
+                    <div class="instagram-post_block"><i class="fab fa-instagram"></i>
+                        <p>Instagram</p>
+                    </div>
+                </a>
+                <a class="instagram-img_block" href="https://www.instagram.com/" target="_blank"><img src="assets/images/instagram/2.png" alt="instagram post">
+                    <div class="instagram-post_block"><i class="fab fa-instagram"></i>
+                        <p>Instagram</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!--End instagram-->
     <footer>
         <div class="container">
             <div class="row">
@@ -149,7 +191,7 @@ if (isset($_SESSION['cart'])) {
                     </div>
                 </div>
                 <div class="col-lg-4">
-                        <p class="copyright">© 2022 muffin.</p>
+                    <p class="copyright">© 2022 muffin.</p>
                 </div>
             </div>
         </div>
