@@ -2,9 +2,6 @@
 
 session_start();
 
-$_SESSION['totalprice'] = "CHF " . "20.00";
-$cartArray = $_SESSION['cart'];
-
 ?>
 
 <!DOCTYPE html>
@@ -64,7 +61,7 @@ $cartArray = $_SESSION['cart'];
         <!--End header-->
 
         <?php require "./data/getproducts.php" ?>
-        <?php require "./data/readcart.php" ?>
+        <?php require "./data/cart.php" ?>
 
         <section class="shop">
             <div class="container">
@@ -100,7 +97,7 @@ $cartArray = $_SESSION['cart'];
                                         
                                         <td class="product-total">CHF ' . $key["price"] . '</td>
                                         <td class="product-clear">
-                                            <button class="no-round-btn"><i class="icon_close"></i></button>
+                                            <button class="no-round-btn" onclick="removeFromCart(' . $key["id"] . ')"><i class="icon_close"></i></button>
                                         </td>
                                     </tr>';
                                 };
@@ -239,6 +236,24 @@ $cartArray = $_SESSION['cart'];
         <script src="assets/js/numscroller-1.0.js"></script>
         <script src="assets/js/jquery.countdown.min.js"></script>
         <script src="assets/js/main.js"></script>
+        <script>
+            function removeFromCart(product) {
+                console.log(product + " will be removed from cart");
+                jQuery.ajax({
+                    type: "POST",
+                    url: './data/cart.php',
+                    data: {
+                        action: "remove",
+                        product: product,
+                    },
+                    success: function(data) {
+                        // alert(data);
+                    }
+                });
+                location.reload();
+            }
+        </script>
+
     </div>
 </body>
 

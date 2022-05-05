@@ -206,12 +206,13 @@ session_start();
         function addToCart(product) {
             jQuery.ajax({
                 type: "POST",
-                url: './data/addtocart.php',
+                url: './data/cart.php',
                 data: {
+                    action: "add",
                     product: product,
                 },
                 success: function(data) {
-                    alert(data + " wurde in den Warenkorb gelegt");
+                    // alert(data);
                 }
             });
         }
