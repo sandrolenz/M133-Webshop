@@ -111,7 +111,7 @@
                                             </a>
                                             <div class="product-detail">
                                                 <div class="product-name"><a href="shop_detail.php?product=' . $key["id"] . '">' . $key["name"] . '</a></div>
-                                                <h3 class="product-price">' . $key["price"] . '</h3>
+                                                <h3 class="product-price">CHF ' . $key["price"] . '</h3>
                                                 </div>
                                             </div>
                                         </div>';

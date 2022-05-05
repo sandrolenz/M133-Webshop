@@ -2217,7 +2217,7 @@ footer.v2 .footer-links ul li {
     display: block;
 }
 
-.product-block .product-detail .product-price:before,
+.product-block .product-detail,
 .product-block .product-detail .shop-cart .cart-table .table tbody .product-total:before,
 .shop-cart .cart-table .table tbody .product-block .product-detail .product-total:before {
     content: "$";
