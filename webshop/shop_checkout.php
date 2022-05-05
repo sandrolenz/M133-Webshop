@@ -1,7 +1,6 @@
 <?php
 
 session_start();
-$cartJSON = $_SESSION['cart'];
 
 ?>
 
@@ -60,6 +59,9 @@ $cartJSON = $_SESSION['cart'];
                 </div>
         </header>
         <!--End header-->
+
+        <?php require "./data/cart.php" ?>
+
         <section class="shop">
             <div class="container">
                 <div class="shop-checkout">
@@ -92,7 +94,7 @@ $cartJSON = $_SESSION['cart'];
                                     </div>
                                     <div class="form-group">
                                         <label for="postcode">PLZ*</label>
-                                        <input id="postcode" type="text" required>
+                                        <input id="postcode" type="number" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="city">Ort*</label>
@@ -131,16 +133,18 @@ $cartJSON = $_SESSION['cart'];
                                         </thead>
                                         <tbody>
                                             <?php
-                                                foreach ($cartJSON as $key) {
-                                                    echo '<tr>
+                                            foreach ($cartJSON as $key) {
+                                                echo '<tr>
                                                         <td class="product">' . $key['name'] . '</td>
                                                         <td class="price">' . $key['price'] . '</td>
                                                     </tr>';
-                                                };
+                                            };
                                             ?>
                                             <tr>
                                                 <th>total</th>
-                                                <td class="total-price"><?php echo $_SESSION["totalprice"] ?></td>
+                                                <td class="total-price">
+                                                    ...
+                                                </td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -155,7 +159,7 @@ $cartJSON = $_SESSION['cart'];
                                     </div>
                                     -->
                                     <div class="submit-form">
-                                        <button id="place-order">Jetzt Bestellen</button>
+                                        <button id="place-order" onclick="placeOrder()">Jetzt Bestellen</button>
                                     </div>
                                 </div>
                             </div>
@@ -253,6 +257,67 @@ $cartJSON = $_SESSION['cart'];
         <script src="assets/js/numscroller-1.0.js"></script>
         <script src="assets/js/jquery.countdown.min.js"></script>
         <script src="assets/js/main.js"></script>
+        <script>
+            var totalprice = 0;
+            Array.from(document.getElementsByClassName("price")).forEach(
+                function(element, index, array) {
+                    totalprice = totalprice + parseFloat(element.innerHTML);
+                    console.log(totalprice);
+                }
+            );
+            $("td.total-price")[0].innerHTML = "CHF " + totalprice;
+
+            function placeOrder() {
+                // validate form
+                var write = true
+
+                if ($('#first-name').val() == "" || $('#last-name').val() == "" || $('#country').val() == "" || $('#street').val() == "" || $('#postcode').val() == "" || $('#city').val() == "" || $('#email').val() == "") {
+                    write = false
+                }
+
+                if (write == true) {
+                    jQuery.ajax({
+                        type: "POST",
+                        url: './data/placeorder.php',
+                        data: {
+                            date: new Date().toLocaleString(),
+                            firstname: $('#first-name').val(),
+                            lastname: $('#last-name').val(),
+                            company: $('#company').val(),
+                            country: $('#country').val(),
+                            street: $('#street').val(),
+                            plz: $('#postcode').val(),
+                            city: $('#city').val(),
+                            email: $('#email').val(),
+                            phone: $('#phone').val(),
+                            notes: $('#notes').val(),
+                            totalprice: $('td.total-price')[0].innerHTML.split(" ")[1],
+                        },
+                        success: function(data) {
+                            console.log(data);
+                        }
+                    });
+
+                    // clear cart
+                    jQuery.ajax({
+                        type: "POST",
+                        url: './data/cart.php',
+                        data: {
+                            action: "clear"
+                        },
+                        success: function(data) {
+                            console.log(data);
+                        }
+                    });
+
+                    // confirmation and redirect
+                    // alert("Vielen Dank für Ihre Bestellung!");
+                    // window.location.href = "./shop_sidebar_3col.php";
+                } else {
+                    alert("Bitte alle Felder ausfüllen!");
+                }
+            }
+        </script>
     </div>
 </body>
 

@@ -70,6 +70,11 @@ switch ($action) {
         }
         exit("removed");
 
+    case 'clear':
+        // Remove all products from cart array
+        $_SESSION['cart'] = array();
+        exit("cleared");
+
     default:
         exit("No action specified.");
 }

@@ -4831,6 +4831,7 @@ footer.v2 .footer-links ul li {
 }
 
 .shop-checkout form .form-group input[type="text"],
+.shop-checkout form .form-group input[type="number"],
 .shop-checkout form .form-group input[type="email"],
 .shop-checkout form .form-group input[type="password"] {
     background-color: #edf0f5;
@@ -4854,6 +4855,7 @@ footer.v2 .footer-links ul li {
 }
 
 .shop-checkout form .form-group input[type="text"]:focus,
+.shop-checkout form .form-group input[type="number"]:focus,
 .shop-checkout form .form-group input[type="email"]:focus,
 .shop-checkout form .form-group input[type="password"]:focus {
     outline: 0;
@@ -4862,6 +4864,7 @@ footer.v2 .footer-links ul li {
 }
 
 .shop-checkout form .form-group input[type="text"]::-webkit-input-placeholder,
+.shop-checkout form .form-group input[type="number"]::-webkit-input-placeholder,
 .shop-checkout form .form-group input[type="email"]::-webkit-input-placeholder,
 .shop-checkout form .form-group input[type="password"]::-webkit-input-placeholder {
     /* WebKit, Blink, Edge */
@@ -4874,6 +4877,7 @@ footer.v2 .footer-links ul li {
 }
 
 .shop-checkout form .form-group input[type="text"]:-moz-placeholder,
+.shop-checkout form .form-group input[type="number"]:-moz-placeholder,
 .shop-checkout form .form-group input[type="email"]:-moz-placeholder,
 .shop-checkout form .form-group input[type="password"]:-moz-placeholder {
     /* Mozilla Firefox 4 to 18 */
@@ -4887,6 +4891,7 @@ footer.v2 .footer-links ul li {
 }
 
 .shop-checkout form .form-group input[type="text"]::-moz-placeholder,
+.shop-checkout form .form-group input[type="number"]::-moz-placeholder,
 .shop-checkout form .form-group input[type="email"]::-moz-placeholder,
 .shop-checkout form .form-group input[type="password"]::-moz-placeholder {
     /* Mozilla Firefox 19+ */
@@ -4900,6 +4905,7 @@ footer.v2 .footer-links ul li {
 }
 
 .shop-checkout form .form-group input[type="text"]:-ms-input-placeholder,
+.shop-checkout form .form-group input[type="number"]:-ms-input-placeholder,
 .shop-checkout form .form-group input[type="email"]:-ms-input-placeholder,
 .shop-checkout form .form-group input[type="password"]:-ms-input-placeholder {
     /* Internet Explorer 10-11 */
@@ -4912,6 +4918,7 @@ footer.v2 .footer-links ul li {
 }
 
 .shop-checkout form .form-group input[type="text"]::-ms-input-placeholder,
+.shop-checkout form .form-group input[type="number"]::-ms-input-placeholder,
 .shop-checkout form .form-group input[type="email"]::-ms-input-placeholder,
 .shop-checkout form .form-group input[type="password"]::-ms-input-placeholder {
     /* Microsoft Edge */
@@ -4924,6 +4931,7 @@ footer.v2 .footer-links ul li {
 }
 
 .shop-checkout form .form-group input[type="text"]::placeholder,
+.shop-checkout form .form-group input[type="number"]::placeholder,
 .shop-checkout form .form-group input[type="email"]::placeholder,
 .shop-checkout form .form-group input[type="password"]::placeholder {
     /* Most modern browsers support this now. */

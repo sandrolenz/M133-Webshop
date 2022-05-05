@@ -1,5 +1,9 @@
 <?php
 
+if (!isset($_SESSION)) {
+    session_start();
+}
+
 $dbname = 'm133_webshop';
 $dbuser = 'm133_fritz';
 $dbpassword = 'aDQBiW4K1JfQXxuM';
@@ -15,8 +19,7 @@ try {
 // Place order
 // -------------------------
 
-$userid = $_POST['userid'];
-$date = getdate();
+$date = $_POST["date"];
 $firstname = $_POST['firstname'];
 $lastname = $_POST['lastname'];
 $company = $_POST['company'];
@@ -29,10 +32,17 @@ $phone = $_POST['phone'];
 $notes = $_POST['notes'];
 $totalprice = $_POST['totalprice'];
 
-$statement = $dblink->prepare("INSERT INTO order VALUES (NULL, $userid, $date, $firstname, $lastname, $company, $country, $street, $plz, $city, $email, $phone, $notes, $totalprice)");
+$statement = $dblink->prepare("INSERT INTO orders VALUES (NULL, '$date', '$firstname', '$lastname', '$company', '$country', '$street', $plz, '$city', '$email', '$phone', '$notes', '$totalprice')");
 $statement->execute();
 
 $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-$productsJSON = $result;
+
+foreach ($_SESSION['cart'] as $key => $value) {
+    $statement1 = $dblink->prepare("INSERT INTO orders_products VALUES ($orderid, $value)");
+    $statement1->execute();
+    $result1 = $statement1->fetchAll(PDO::FETCH_ASSOC);
+}
+
+exit(var_dump($result) . " - " . var_dump($result1));
 
 ?>
