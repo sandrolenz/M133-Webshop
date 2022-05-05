@@ -384,6 +384,10 @@ header .header-wrapper .menu-function #search {
     display: inline-block;
 }
 
+#search i {
+    color:#f17070;
+}
+
 header .header-wrapper .menu-function #search:after {
     content: "|";
     margin: 0 20px;
