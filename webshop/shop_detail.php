@@ -2,12 +2,6 @@
 
 session_start();
 
-if (isset($_SESSION['cart'])) {
-    $cartArray = $_SESSION['cart'];
-} else {
-    $cartArray = array();
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -210,9 +204,16 @@ if (isset($_SESSION['cart'])) {
     <script src="assets/js/main.js"></script>
     <script>
         function addToCart(product) {
-            console.log(product);
-            cartArray.push(product);
-            console.log("Current Cart: " + cartArray);
+            jQuery.ajax({
+                type: "POST",
+                url: './data/addtocart.php',
+                data: {
+                    product: product,
+                },
+                success: function(data) {
+                    alert(data + " wurde in den Warenkorb gelegt");
+                }
+            });
         }
     </script>
 

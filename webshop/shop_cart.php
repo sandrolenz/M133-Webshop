@@ -64,6 +64,7 @@ $cartArray = $_SESSION['cart'];
         <!--End header-->
 
         <?php require "./data/getproducts.php" ?>
+        <?php require "./data/readcart.php" ?>
 
         <section class="shop">
             <div class="container">
