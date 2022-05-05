@@ -1,7 +1,7 @@
 # M133-Webshop
 Repository of the Webshop for M133
 
-🧁 Visit the shop at tbz.sandrolenz.ch/m133
+🧁 Visit the shop at https://tbz.sandrolenz.ch/m133
 
 ---
 
