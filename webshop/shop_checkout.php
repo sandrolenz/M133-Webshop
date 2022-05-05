@@ -297,25 +297,26 @@ session_start();
                             console.log("INFO: " + data);
                             if (data == "cart-empty") {
                                 alert("Bitte fügen Sie mindestens ein Produkt zum Warenkorb hinzu.");
+                                exit;
+                            } else {
+                                // clear cart
+                                jQuery.ajax({
+                                    type: "POST",
+                                    url: './data/cart.php',
+                                    data: {
+                                        action: "clear"
+                                    },
+                                    success: function(data) {
+                                        console.log(data);
+                                    }
+                                });
+
+                                // confirmation and redirect
+                                alert("Vielen Dank für Ihre Bestellung!");
+                                window.location.href = "./shop_sidebar_3col.php";
                             }
                         }
                     });
-
-                    // clear cart
-                    jQuery.ajax({
-                        type: "POST",
-                        url: './data/cart.php',
-                        data: {
-                            action: "clear"
-                        },
-                        success: function(data) {
-                            console.log(data);
-                        }
-                    });
-
-                    // confirmation and redirect
-                    alert("Vielen Dank für Ihre Bestellung!");
-                    window.location.href = "./shop_sidebar_3col.php";
                 } else {
                     alert("Bitte alle Felder ausfüllen!");
                 }
