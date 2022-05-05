@@ -294,7 +294,10 @@ session_start();
                             totalprice: $('td.total-price')[0].innerHTML.split(" ")[1],
                         },
                         success: function(data) {
-                            console.log(data);
+                            console.log("INFO: " + data);
+                            if (data == "cart-empty") {
+                                alert("Bitte fügen Sie mindestens ein Produkt zum Warenkorb hinzu.");
+                            }
                         }
                     });
 
@@ -311,8 +314,8 @@ session_start();
                     });
 
                     // confirmation and redirect
-                    // alert("Vielen Dank für Ihre Bestellung!");
-                    // window.location.href = "./shop_sidebar_3col.php";
+                    alert("Vielen Dank für Ihre Bestellung!");
+                    window.location.href = "./shop_sidebar_3col.php";
                 } else {
                     alert("Bitte alle Felder ausfüllen!");
                 }
