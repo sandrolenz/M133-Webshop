@@ -60,7 +60,7 @@ session_start();
         </header>
         <!--End header-->
 
-        <?php require "./data/cart.php" ?>
+        <?php require "data/cart.php" ?>
 
         <section class="shop">
             <div class="container">

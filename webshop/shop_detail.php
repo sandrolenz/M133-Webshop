@@ -60,7 +60,7 @@ session_start();
         </header>
         <!--End header-->
 
-        <?php require "./data/getproducts.php" ?>
+        <?php require "data/getproducts.php" ?>
 
         <div class="no-pd" id="content">
             <div class="container">

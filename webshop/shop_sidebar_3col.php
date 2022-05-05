@@ -54,7 +54,7 @@
         </header>
         <!--End header-->
 
-        <?php require "./data/getproducts.php" ?>
+        <?php require "data/getproducts.php" ?>
 
         <section class="shop">
             <div class="container">
