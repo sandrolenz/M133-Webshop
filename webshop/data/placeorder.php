@@ -37,6 +37,8 @@ $statement->execute();
 
 $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
+$orderid = $dblink->lastInsertId();
+
 foreach ($_SESSION['cart'] as $key => $value) {
     $statement1 = $dblink->prepare("INSERT INTO orders_products VALUES ($orderid, $value)");
     $statement1->execute();
