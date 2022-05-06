@@ -76,11 +76,11 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
                                 <div class="form-wrapper">
                                     <div class="form-group">
                                         <label for="login-name">Benutzername*</label>
-                                        <input id="login-name" type="text" required>
+                                        <input id="login-name" type="text" autocomplete="username" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="login-passwd">Passwort*</label>
-                                        <input id="login-passwd" type="password" required>
+                                        <input id="login-passwd" type="password" autocomplete="current-password" required>
                                     </div>
                                 </div>
                             </div>
