@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 06. Mai 2022 um 10:37
+-- Erstellungszeit: 06. Mai 2022 um 13:58
 -- Server-Version: 10.4.17-MariaDB
 -- PHP-Version: 7.4.13
 
@@ -148,6 +148,25 @@ INSERT INTO `scent` (`id`, `name`) VALUES
 (5, 'Blaubeere'),
 (6, 'Vanille');
 
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Daten für Tabelle `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `password`) VALUES
+(1, 'slenz', 'e99a18c428cb38d5f260853678922e03');
+
 --
 -- Indizes der exportierten Tabellen
 --
@@ -186,6 +205,12 @@ ALTER TABLE `scent`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indizes für die Tabelle `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT für exportierte Tabellen
 --
 
@@ -212,6 +237,12 @@ ALTER TABLE `product`
 --
 ALTER TABLE `scent`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT für Tabelle `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints der exportierten Tabellen
