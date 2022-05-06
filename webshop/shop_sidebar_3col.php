@@ -107,9 +107,6 @@
                                             <div class="product-block">
                                             <a class="product-img" href="shop_detail.php?product=' . $key["id"] . '">
                                                 <img src="assets/images/products/' . $key["id"] . '.png" alt="product image">
-                                                <div class="product-select">
-                                                    <button class="add-cart"><i class="icon_bag_alt"></i></button>
-                                                </div>
                                             </a>
                                             <div class="product-detail">
                                                 <div class="product-name"><a href="shop_detail.php?product=' . $key["id"] . '">' . $key["name"] . '</a></div>
