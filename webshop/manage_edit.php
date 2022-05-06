@@ -68,16 +68,24 @@ session_start();
         <?php 
             require "data/getscents.php";
             $scents = "";
-            
+
             foreach ($scentJSON as $key) {
-                $scents = $scents . "<option value=" . $key["id"] . ">" . $key["name"] . "</option>";
+                if ($productsJSON[0]["scent"] == $key["name"]) {
+                    $scents = $scents . "<option value=" . $key["id"] . " selected>" . $key["name"] . "</option>";
+                } else {
+                    $scents = $scents . "<option value=" . $key["id"] . ">" . $key["name"] . "</option>";
+                }
             };
             
             require "data/getbrands.php";
             $brands = "";
             
             foreach ($brandsJSON as $key) {
-                $brands = $brands . "<option value=" . $key["id"] . ">" . $key["name"] . " (" . $key["country"] . ")</option>";
+                if ($productsJSON[0]["brand"] == $key["name"]) {
+                    $brands = $brands . "<option value=" . $key["id"] . " selected>" . $key["name"] . " (" . $key["country"] . ")</option>";
+                } else {
+                    $brands = $brands . "<option value=" . $key["id"] . ">" . $key["name"] . " (" . $key["country"] . ")</option>";
+                }
             };
         ?>
 
