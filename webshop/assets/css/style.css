@@ -385,7 +385,7 @@ header .header-wrapper .menu-function #search {
 }
 
 #search i {
-    color:#f17070;
+    color:#1d2c44;
 }
 
 header .header-wrapper .menu-function #search:after {
@@ -404,7 +404,8 @@ header .header-wrapper .menu-function #search .search-btn {
     display: inline-block;
 }
 
-header .header-wrapper .menu-function #search .search-btn:hover {
+header .header-wrapper .menu-function #search .search-btn:hover,
+#search a i:hover {
     color: #f17070;
     text-decoration: none;
 }
