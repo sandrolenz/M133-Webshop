@@ -4815,11 +4815,13 @@ footer.v2 .footer-links ul li {
     margin-bottom: 40px;
 }
 
-.shop-checkout form .form-group {
+.shop-checkout form .form-group,
+.shop-detail__content .form-group {
     margin-bottom: 20px;
 }
 
-.shop-checkout form .form-group label {
+.shop-checkout form .form-group label,
+.shop-detail__content .form-group label {
     font-family: "Cerebri-regular";
     font-size: 16px;
     color: #1d2c44;
@@ -4833,7 +4835,8 @@ footer.v2 .footer-links ul li {
 .shop-checkout form .form-group input[type="text"],
 .shop-checkout form .form-group input[type="number"],
 .shop-checkout form .form-group input[type="email"],
-.shop-checkout form .form-group input[type="password"] {
+.shop-checkout form .form-group input[type="password"],
+.shop-detail__content .form-group input[type="text"]{
     background-color: #edf0f5;
     border-radius: 2px;
     -webkit-border-radius: 2px;
@@ -4857,7 +4860,8 @@ footer.v2 .footer-links ul li {
 .shop-checkout form .form-group input[type="text"]:focus,
 .shop-checkout form .form-group input[type="number"]:focus,
 .shop-checkout form .form-group input[type="email"]:focus,
-.shop-checkout form .form-group input[type="password"]:focus {
+.shop-checkout form .form-group input[type="password"]:focus,
+.shop-detail__content .form-group input[type="text"]:focus {
     outline: 0;
     box-shadow: none;
     border-color: #a4a8b0;
@@ -4866,7 +4870,8 @@ footer.v2 .footer-links ul li {
 .shop-checkout form .form-group input[type="text"]::-webkit-input-placeholder,
 .shop-checkout form .form-group input[type="number"]::-webkit-input-placeholder,
 .shop-checkout form .form-group input[type="email"]::-webkit-input-placeholder,
-.shop-checkout form .form-group input[type="password"]::-webkit-input-placeholder {
+.shop-checkout form .form-group input[type="password"]::-webkit-input-placeholder,
+.shop-detail__content .form-group input[type="text"]::-webkit-input-placeholder {
     /* WebKit, Blink, Edge */
     font-family: "Cerebri-regular";
     font-size: 16px;
@@ -4943,7 +4948,9 @@ footer.v2 .footer-links ul li {
     line-height: -moz-block-height;
 }
 
-.shop-checkout form .form-group textarea {
+.shop-checkout form .form-group textarea,
+.shop-detail__content .form-group textarea,
+.shop-detail__content .form-group select {
     width: 100%;
     background-color: #edf0f5;
     border-radius: 0;
@@ -4963,13 +4970,17 @@ footer.v2 .footer-links ul li {
     background-color: transparent;
 }
 
-.shop-checkout form .form-group textarea:focus {
+.shop-checkout form .form-group textarea:focus,
+.shop-detail__content .form-group textarea:focus,
+.shop-detail__content .form-group select:focus {
     outline: 0;
     box-shadow: none;
     border-color: #a4a8b0;
 }
 
-.shop-checkout form .form-group textarea::-webkit-input-placeholder {
+.shop-checkout form .form-group textarea::-webkit-input-placeholder,
+.shop-detail__content .form-group textarea::-webkit-input-placeholder,
+.shop-detail__content .form-group select::-webkit-input-placeholder {
     /* WebKit, Blink, Edge */
     font-family: "Cerebri-regular";
     font-size: 16px;
