@@ -44,7 +44,9 @@
                             <div class="col-0 col-xl-2">
                                 <div class="menu-function">
                                     <div id="search"><a href="shop_cart.php"><i class="fas fa-shopping-cart"></i></a></div>
-                                    <div class="social-contact"><a href="https://www.github.com/sandrolenz/M133-Webshop" target="_blank"><i class="fab fa-github"></i></a>
+                                    <div class="social-contact">
+                                        <a href="https://www.github.com/sandrolenz/M133-Webshop" target="_blank"><i class="fab fa-github"></i></a>
+                                        <a href="login.php"><i class="fas fa-user"></i></a></div>
                                     </div>
                                 </div>
                             </div>
