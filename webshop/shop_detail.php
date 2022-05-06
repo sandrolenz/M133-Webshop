@@ -86,7 +86,7 @@ session_start();
                                     </div>
                                     <p class="description">' . $key["description"] . '</p>
                                     <div class="product-controller">
-                                        <button class="normal-btn no-round" onclick="addToCart(' . $key["id"] . ')"><a>In den Einkaufswagen</a></button>
+                                        <button class="normal-btn no-round" onclick="addToCart(' . $key["id"] . ')"><a id="add-to-cart">In den Einkaufswagen</a></button>
                                     </div>
                                 </div>
                                 <div class="shop-detail__content__bottom">
@@ -212,7 +212,10 @@ session_start();
                     product: product,
                 },
                 success: function(data) {
-                    // alert(data);
+                    $("#add-to-cart").text("Hinzugefügt");
+                    setTimeout(function() {
+                        $("#add-to-cart").text("In den Einkaufswagen");
+                    }, 1000);
                 }
             });
         }
