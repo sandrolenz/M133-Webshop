@@ -151,37 +151,27 @@ session_start();
         <section class="instagram">
             <div class="container">
                 <div class="instagram-posts">
-                    <a class="instagram-img_block" href="https://www.instagram.com/" target="_blank"><img src="assets/images/instagram/1.png" alt="instagram post">
+                    <a class="instagram-img_block" href="https://www.instagram.com/p/CdLTccosl0r" target="_blank"><img src="assets/images/instagram/1.png" alt="instagram post">
                         <div class="instagram-post_block"><i class="fab fa-instagram"></i>
                             <p>Instagram</p>
                         </div>
                     </a>
-                    <a class="instagram-img_block" href="https://www.instagram.com/" target="_blank"><img src="assets/images/instagram/2.png" alt="instagram post">
+                    <a class="instagram-img_block" href="https://www.instagram.com/p/CdLTa2tsCW0" target="_blank"><img src="assets/images/instagram/2.png" alt="instagram post">
                         <div class="instagram-post_block"><i class="fab fa-instagram"></i>
                             <p>Instagram</p>
                         </div>
                     </a>
-                    <a class="instagram-img_block" href="https://www.instagram.com/" target="_blank"><img src="assets/images/instagram/3.png" alt="instagram post">
+                    <a class="instagram-img_block" href="https://www.instagram.com/p/CdLTZlaMQLq" target="_blank"><img src="assets/images/instagram/3.png" alt="instagram post">
                         <div class="instagram-post_block"><i class="fab fa-instagram"></i>
                             <p>Instagram</p>
                         </div>
                     </a>
-                    <a class="instagram-img_block" href="https://www.instagram.com/" target="_blank"><img src="assets/images/instagram/4.png" alt="instagram post">
+                    <a class="instagram-img_block" href="https://www.instagram.com/p/CDLTW_bsTX2" target="_blank"><img src="assets/images/instagram/4.png" alt="instagram post">
                         <div class="instagram-post_block"><i class="fab fa-instagram"></i>
                             <p>Instagram</p>
                         </div>
                     </a>
-                    <a class="instagram-img_block" href="https://www.instagram.com/" target="_blank"><img src="assets/images/instagram/5.png" alt="instagram post">
-                        <div class="instagram-post_block"><i class="fab fa-instagram"></i>
-                            <p>Instagram</p>
-                        </div>
-                    </a>
-                    <a class="instagram-img_block" href="https://www.instagram.com/" target="_blank"><img src="assets/images/instagram/3.png" alt="instagram post">
-                        <div class="instagram-post_block"><i class="fab fa-instagram"></i>
-                            <p>Instagram</p>
-                        </div>
-                    </a>
-                    <a class="instagram-img_block" href="https://www.instagram.com/" target="_blank"><img src="assets/images/instagram/2.png" alt="instagram post">
+                    <a class="instagram-img_block" href="https://www.instagram.com/p/CdLTVclsdfl" target="_blank"><img src="assets/images/instagram/5.png" alt="instagram post">
                         <div class="instagram-post_block"><i class="fab fa-instagram"></i>
                             <p>Instagram</p>
                         </div>
