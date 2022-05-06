@@ -61,7 +61,7 @@
                         <div class="col-12">
                             <div class="shop-banner">
                                 <div class="post-classic-tib bg-center" style="background-image: url('assets/images/shop/big-post.png')">
-                                    <div class="post-detail"><a class="post-title" href="shop_detail.php?product=4">Pisen x Lindt - Muffin-Überraschungsbox</a>
+                                    <div class="post-detail"><a class="post-title" href="shop_detail.php?product=4">Muffin. x Lindt - Muffin-Überraschungsbox</a>
                                         <p class="post-describe">Erhalten sie 5 zufällige Muffins aus der Überraschungsbox! In Zusammenarbeit mit Lindt.</p>
                                         <button class="normal-btn no-round" onclick="window.location.href='shop_detail.php?product=4'">Jetzt bestellen</button>
                                     </div>
