@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 05. Mai 2022 um 14:32
+-- Erstellungszeit: 06. Mai 2022 um 10:37
 -- Server-Version: 10.4.17-MariaDB
 -- PHP-Version: 7.4.13
 
@@ -115,12 +115,15 @@ CREATE TABLE `product` (
 
 INSERT INTO `product` (`id`, `name`, `description`, `price`, `brand`, `scent`) VALUES
 (1, 'Chocolate', 'Schokoladen-Muffin', '3.50', 1, 1),
-(2, 'Strawberry Dream', 'Schokolade verfeinert mit frischen Erdbeeren.', '4.00', 1, 2),
+(2, 'Strawberry Dream', 'Schokolade verfeinert mit frischen Erdbeeren.', '5.00', 1, 2),
 (3, 'Golden Banana', 'Banane verfeinert mit Schokoladen-Chips', '4.00', 1, 3),
 (4, 'Muffin Surprise', '5 zufällige Muffins aus der Überraschungsbox! In Zusammenarbeit mit Lindt.', '19.90', 2, 4),
 (5, 'Blueberry Almond', 'Das Highlight für jeden Sommerabend. Unser einzigartiges Blaubeer-Muffin mit Mandeln.', '4.00', 1, 5),
 (6, 'Freedom Cupcake', 'Für alle die mehr Freiheit möchten - hier bekommen Sie diese. Passt am besten zu Ihrer amerikanischen Lieblings-Serie auf Netflix.', '3.50', 3, 6),
-(7, 'Romantic Roses', 'Sie planen eine Hochzeit oder ein romantisches Dinner? Mit unserem Romantic Cupcake mit Vanille-Geschmack machen Sie bestimmt nichts falsch.', '5.00', 1, 6);
+(7, 'Romantic Roses', 'Sie planen eine Hochzeit oder ein romantisches Dinner? Mit unserem Romantic Cupcake mit Vanille-Geschmack machen Sie bestimmt nichts falsch.', '5.00', 1, 6),
+(8, 'Granola Cupcake', 'Cupcake mit köstlicher Schlagsahne und verziert mit Erdbeere, Blaubeeren und Müsliriegel. Perfekt für einen Energieschub am Morgen.', '5.00', 3, 4),
+(9, 'Animal Selection', 'Erhalten Sie 6 zufällig ausgewählte Cupcakes aus unserer Liste von Tier-Designs. Produkt kann von Bildern abweichen. Gleiches Design mehrfach möglich.', '24.90', 3, 1),
+(10, 'Pink Chocolate', 'Schokoladen-Muffin dekoriert mit Pinker Creme und Brombeeren. ', '4.50', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -202,7 +205,7 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT für Tabelle `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT für Tabelle `scent`
