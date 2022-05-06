@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 06. Mai 2022 um 13:58
+-- Erstellungszeit: 06. Mai 2022 um 15:02
 -- Server-Version: 10.4.17-MariaDB
 -- PHP-Version: 7.4.13
 
@@ -73,7 +73,8 @@ INSERT INTO `orders` (`id`, `date`, `firstname`, `lastname`, `company`, `country
 (2, '5.5.2022, 13:21:43', 'klaus', 'müller', '', 'schweiz', 'sihlquai', 8001, 'Zürich', 'klaus@muller.ch', '', '', '4.00'),
 (3, '5.5.2022, 13:36:49', 'assdf', 'sdf', '', 'sdfs', 'sdfs', 2324, 'asdasd', 'asdasd@asdasd.sd', '', 'asjd hkasjd', '19.90'),
 (4, '5.5.2022, 13:38:38', 'asdf', 'sdfsa', '', 'asdf', 'sdf', 2341, 'asdas', 'sdfsd@asd.asd', '', '', '4.00'),
-(5, '5.5.2022, 13:54:20', 'sa', 'le', '', 'schweiz', 'mühleweg 12', 1234, 'zh', 'asd@asd.ads', '', 'keine', '23.40');
+(5, '5.5.2022, 13:54:20', 'sa', 'le', '', 'schweiz', 'mühleweg 12', 1234, 'zh', 'asd@asd.ads', '', 'keine', '23.40'),
+(6, '6.5.2022, 14:06:17', 'test', 'asdad', '', 'sdfsd', 'sdfs', 1232, 'asdasda', 'qweqwe@sada.sa', '', 'asdasd', '28.40');
 
 -- --------------------------------------------------------
 
@@ -92,7 +93,9 @@ CREATE TABLE `orders_products` (
 
 INSERT INTO `orders_products` (`orderid`, `productid`) VALUES
 (5, 4),
-(5, 1);
+(5, 1),
+(6, 9),
+(6, 6);
 
 -- --------------------------------------------------------
 
@@ -224,7 +227,7 @@ ALTER TABLE `brand`
 -- AUTO_INCREMENT für Tabelle `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT für Tabelle `product`
