@@ -95,7 +95,7 @@ session_start();
                                         
                                         <td class="product-total">CHF ' . $key["price"] . '</td>
                                         <td class="product-clear">
-                                            <button class="no-round-btn" onclick="removeFromCart(' . $key["id"] . ')"><i class="icon_close"></i></button>
+                                            <button class="no-round-btn" onclick="removeFromCart(' . $key["id"] . ')">X</button>
                                         </td>
                                     </tr>';
                                 };
