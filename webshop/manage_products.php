@@ -46,13 +46,14 @@
                                     <div id="search"><a href="shop_cart.php"><i class="fas fa-shopping-cart"></i></a></div>
                                     <div class="social-contact">
                                         <a href="https://www.github.com/sandrolenz/M133-Webshop" target="_blank"><i class="fab fa-github"></i></a>
-                                        <a href="login.php"><i class="fas fa-user"></i></a></div>
+                                        <a href="login.php"><i class="fas fa-user"></i></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
         </header>
         <!--End header-->
 
@@ -80,6 +81,9 @@
                                         </div>';
                                     };
                                     ?>
+                                </div>
+                                <div class="product-controller">
+                                    <button class="normal-btn no-round" onclick="logout()"><a id="add-to-cart">Abmelden</a></button>
                                 </div>
                             </div>
                         </div>
@@ -165,7 +169,12 @@
         <script src="assets/js/imagesloaded.pkgd.min.js"></script>
         <script src="assets/js/numscroller-1.0.js"></script>
         <script src="assets/js/jquery.countdown.min.js"></script>
-        <script src="assets/js/main.js"></script>      
+        <script src="assets/js/main.js"></script>
+        <script>
+            function logout() {
+                window.location.href = "./logout.php";
+            }
+        </script>
     </div>
 </body>
 
