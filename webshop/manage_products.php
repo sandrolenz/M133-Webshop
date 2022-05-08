@@ -2,7 +2,7 @@
 
 session_start();
 
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] == false) {
+if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] == false) {
     header("Location: login.php");
 }
 
@@ -87,6 +87,14 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] == false) {
                                         </div>';
                                     };
                                     ?>
+                                    <div class="col-8 col-md-4 col-lg-5 col-xl-4">
+                                        <div class="product-block">
+                                            <a class="product-img" href="manage_new.php">
+                                                <img src="assets/images/products/new.png" alt="product image">
+                                            </a>
+                                            <div class="product-detail"></div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="product-controller">
                                     <button class="normal-btn no-round" onclick="logout()"><a id="add-to-cart">Abmelden</a></button>

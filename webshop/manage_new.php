@@ -2,7 +2,7 @@
 
 session_start();
 
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] == false) {
+if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] == false) {
     header("Location: login.php");
 }
 
@@ -12,7 +12,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] == false) {
 <html lang="en">
 
 <head>
-    <title>Bearbeiten | muffin.</title>
+    <title>Neues Produkt | muffin.</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
     <meta name="keywords" content="baking, delivery, clean, clear, shop, shopping, muffin">
@@ -63,85 +63,70 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] == false) {
         </header>
         <!--End header-->
 
-        <?php require "data/getproducts.php" ?>
-        
-        <?php 
-            require "data/getscents.php";
-            $scents = "";
+        <?php
+        require "data/getscents.php";
+        $scents = "";
 
-            foreach ($scentJSON as $key) {
-                if ($productsJSON[0]["scent"] == $key["name"]) {
-                    $scents = $scents . "<option value=" . $key["id"] . " selected>" . $key["name"] . "</option>";
-                } else {
-                    $scents = $scents . "<option value=" . $key["id"] . ">" . $key["name"] . "</option>";
-                }
-            };
-            
-            require "data/getbrands.php";
-            $brands = "";
-            
-            foreach ($brandsJSON as $key) {
-                if ($productsJSON[0]["brand"] == $key["name"]) {
-                    $brands = $brands . "<option value=" . $key["id"] . " selected>" . $key["name"] . " (" . $key["country"] . ")</option>";
-                } else {
-                    $brands = $brands . "<option value=" . $key["id"] . ">" . $key["name"] . " (" . $key["country"] . ")</option>";
-                }
-            };
+        foreach ($scentJSON as $key) {
+            $scents = $scents . "<option value=" . $key["id"] . ">" . $key["name"] . "</option>";
+        };
+
+        require "data/getbrands.php";
+        $brands = "";
+
+        foreach ($brandsJSON as $key) {
+            $brands = $brands . "<option value=" . $key["id"] . ">" . $key["name"] . " (" . $key["country"] . ")</option>";
+        };
         ?>
 
         <div class="no-pd" id="content">
             <div class="container">
                 <div class="shop-detail">
                     <div class="row">
-                        <?php
-                        foreach ($productsJSON as $key) {
-                            echo '<div class="col-12 col-md-6">
-                                <div class="shop-detail__image">
-                                    <div class="slider slider-single">
-                                        <div class="slider-single__item"><img src="assets/images/products/' . $key["id"] . '.png" alt="Product image">
+                        <div class="col-12 col-md-6">
+                            <div class="shop-detail__image">
+                                <div class="slider slider-single">
+                                    <div class="slider-single__item"><img src="assets/images/products/new.png" alt="Product image">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="shop-detail__content">
+                                <div class="shop-detail__content__top">
+                                    <div class="form-wrapper">
+                                        <div class="form-group">
+                                            <label for="product-name">Produktename*</label>
+                                            <input id="product-name" type="text" value="Neues Produkt" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="product-price">Preis (in CHF)*</label>
+                                            <input id="product-price" type="text" value="0.00" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="product-description">Beschreibung*</label>
+                                            <textarea id="product-description" type="text" required>Beschreibung</textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="product-scent">Geschmack*</label>
+                                            <?php echo '<select name="Geschmack" id="product-scent" required>' . $scents . '</select>' ?>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="product-brand">Marke*</label>
+                                            <?php echo '<select name="Marke" id="product-brand"  required>' . $brands . '</select>' ?>
+                                        </div>
+                                        <div class="product-controller">
+                                            <button class="normal-btn no-round" onclick="createProduct()"><a id="add-to-cart">Hinzufügen</a></button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 col-md-6">
-                                <div class="shop-detail__content">
-                                    <div class="shop-detail__content__top">
-                                        <div class="form-wrapper">
-                                            <div class="form-group">
-                                                <label for="product-name">Produktename*</label>
-                                                <input id="product-name" type="text" value="' . $key["name"] . '" required>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="product-price">Preis (in CHF)*</label>
-                                                <input id="product-price" type="text" value="' . $key["price"] . '" required>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="product-description">Beschreibung*</label>
-                                                <textarea id="product-description" type="text" required>' . $key["description"] . '</textarea>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="product-scent">Geschmack*</label>
-                                                <select name="Geschmack" id="product-scent" required>' . $scents. '</select>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="product-brand">Marke*</label>
-                                                <select name="Marke" id="product-brand" required>' . $brands. '</select>
-                                            </div>
-                                            <div class="product-controller">
-                                                <button class="normal-btn no-round" onclick="saveChanges(' . $key["id"] . ')"><a id="add-to-cart">Speichern</a></button>
-                                                &nbsp;&nbsp;&nbsp;&nbsp;
-                                                <button class="normal-btn" onclick="deleteProduct(' . $key["id"] . ')"><a id="add-to-cart">Löschen</a></button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>';
-                        };
-                        ?>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
     </div>
     </div>
@@ -225,7 +210,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] == false) {
     <script src="assets/js/jquery.countdown.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script>
-        function saveChanges(product) {
+        function createProduct(product) {
             // Validation
             var write = true;
 
@@ -238,10 +223,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] == false) {
             if (write == true) {
                 jQuery.ajax({
                     type: "POST",
-                    url: './data/updateproduct.php',
+                    url: ' ./data/updateproduct.php',
                     data: {
-                        action: "update",
-                        id: product,
+                        action: "create",
                         name: $("#product-name").val(),
                         description: $("#product-description").val(),
                         price: $("#product-price").val(),
@@ -249,31 +233,13 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] == false) {
                         scent: $("#product-scent").val()
                     },
                     success: function(data) {
-                        alert(data)
+                        alert(data);
                         window.location.href = "manage_products.php";
                     }
                 });
             }
         }
-
-        function deleteProduct(product) {
-            jQuery.ajax({
-                type: "POST",
-                url: './data/updateproduct.php',
-                data: {
-                    action: "delete",
-                    id: product
-                },
-                success: function(data) {
-                    alert(data)
-                    window.location.href = "manage_products.php";
-                }
-            });
-        }
-
     </script>
-
-    </div>
 </body>
 
 </html>
